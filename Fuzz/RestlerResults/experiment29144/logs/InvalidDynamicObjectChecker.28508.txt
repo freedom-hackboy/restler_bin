@@ -1,0 +1,896 @@
+
+Sending invalid request(s):
+'GET /api/blog/posts/143399?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/143399/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/143399?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/143399/143399 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/143402?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/143402,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/143402,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143402/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402/143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143402 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143402,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/143405?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143405/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143405?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143405/143405 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'GET /api/blog/posts/143510?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/143510/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/143510?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/143510/143510 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/143518?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/143518,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/143518,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143518/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518/143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143518 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143518,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/143527?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143527/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143527?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143527/143527 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'GET /api/blog/posts/143680?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/143680/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/143680?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/143680/143680 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/143715?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/143715,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/143715,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/143715/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715/143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/143715 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":143715,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/143752?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143752/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143752?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/143752/143752 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'GET /api/blog/posts/144337?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/144337/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/144337?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/144337/144337 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/144505?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/144505,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/144505,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/144505/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505/144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/144505 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":144505,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/144706?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/144706/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/144706?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/144706/144706 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'GET /api/blog/posts/146390?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/146390/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/146390?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/146390/146390 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/147214?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/147214,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/147214,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/147214/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214/147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/147214 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":147214,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/148042?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/148042/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/148042?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/148042/148042 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'GET /api/blog/posts/159685?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/159685/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/159685?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/159685/159685 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/163703?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/163703,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/163703,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/163703/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703/163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/163703 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":163703,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/168873?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/168873/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/168873?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/168873/168873 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'GET /api/blog/posts/204812?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/204812/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/204812?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Suspect sequence: 200
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'GET /api/blog/posts/204812/204812 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'GET /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+
+Sending invalid request(s):
+'PUT /api/blog/posts/224179?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179?injected_query_string=123,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post?injected_query_string=123",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179?injected_query_string=123,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/?/,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post/?/",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/?/,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179??,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post??",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179??,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/224179,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/224179,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post/my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/224179/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179/224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"{}",\n    "checksum":"abcde"}\r\n'
+
+Suspect sequence: 204
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+POST /api/blog/posts
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/224179 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":{},\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+'PUT /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    "id":224179,\n    "body":"my first blog post",\n    "checksum":"abcde"}\r\n'
+
+Sending invalid request(s):
+'DELETE /api/blog/posts/243540?injected_query_string=123 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/243540/?/ HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/243540?? HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/243540/243540 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'
+'DELETE /api/blog/posts/{} HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n'

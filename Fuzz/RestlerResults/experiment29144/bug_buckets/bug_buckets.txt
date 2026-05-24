@@ -1,0 +1,53 @@
+InvalidValueChecker_500: 1
+InvalidDynamicObjectChecker_20x: 2
+UseAfterFreeChecker_500: 1
+main_driver_500: 3
+Total Buckets: 7
+-------------
+InvalidValueChecker_500 - Bug was reproduced - InvalidValueChecker_500_1.replay.txt
+Hash: InvalidValueChecker_500_5f9bb084cbb3a2529b26bf690142685a65bd355b
+GET /api/blog/posts?page=1&per_page=1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+--------------------------------------------------------------------------------
+InvalidDynamicObjectChecker_20x - Bug was reproduced - InvalidDynamicObjectChecker_20x_1.replay.txt
+Hash: InvalidDynamicObjectChecker_20x_080f3c85aec4b427307e03c004ffe30a9e899238
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+--------------------------------------------------------------------------------
+InvalidDynamicObjectChecker_20x - Bug was reproduced - InvalidDynamicObjectChecker_20x_2.replay.txt
+Hash: InvalidDynamicObjectChecker_20x_82a38edf44e1613514ac1ad0303a4efabdbbb47d
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":_READER_DELIM_api_blog_posts_post_id_READER_DELIM,\n    "body":_READER_DELIM_api_blog_posts_post_body_READER_DELIM,\n    "checksum":fuzzstring}\r\n
+--------------------------------------------------------------------------------
+UseAfterFreeChecker_500 - Bug was reproduced - UseAfterFreeChecker_500_1.replay.txt
+Hash: UseAfterFreeChecker_500_080f3c85aec4b427307e03c004ffe30a9e899238
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+DELETE /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+--------------------------------------------------------------------------------
+main_driver_500 - Bug was reproduced - main_driver_500_1.replay.txt
+Hash: main_driver_500_080f3c85aec4b427307e03c004ffe30a9e899238
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+DELETE /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+--------------------------------------------------------------------------------
+main_driver_500 - Bug was reproduced - main_driver_500_2.replay.txt
+Hash: main_driver_500_82a38edf44e1613514ac1ad0303a4efabdbbb47d
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+GET /api/doc HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+DELETE /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+DELETE /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+PUT /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":_READER_DELIM_api_blog_posts_post_id_READER_DELIM,\n    "body":_READER_DELIM_api_blog_posts_post_body_READER_DELIM,\n    "checksum":fuzzstring}\r\n
+--------------------------------------------------------------------------------
+main_driver_500 - Unable to reproduce bug - main_driver_500_3.replay.txt
+Attempted to reproduce 1 time(s); Reproduced 0 time(s)
+Hash: main_driver_500_760550f0b4f59054980a20091827769a7af1e282
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+GET /api/doc HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+GET /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+DELETE /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+GET /api/doc HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\nauthentication_token_tag\r\n{\n    "id":1,\n    "body":fuzzstring}\r\n
+DELETE /api/blog/posts/_READER_DELIM_api_blog_posts_post_id_READER_DELIM HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nauthentication_token_tag\r\n
+--------------------------------------------------------------------------------

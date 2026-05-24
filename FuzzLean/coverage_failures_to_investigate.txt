@@ -1,0 +1,488 @@
+This file contains the failing requests, ordered by the number of blocked dependent requests.
+To improve coverage, fix the failing requests in the order listed in this file.
+
+Note: some requests are labeled as 'sequence failure'.
+This means the request depends on another request that is failing intermittently.
+For example, a DELETE request for a resource may be skipped because the resource
+PUT request failed due to exceeding quota.  The same PUT request succeeded earlier (and may
+succeed later depending on the resource clean-up behavior in the service), so it is
+considered an intermittent failure.
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/users
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:28:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 169\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1ausername, email, password","data":{"status":400,"params":["username","email","password"]}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:28:59 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 169\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1ausername, email, password","data":{"status":400,"params":["username","email","password"]}}
+
+
+-----------------------------------------------
+Request: Delete /wp-json/wp/v2/tags/{tagId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/tags/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:28:59 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/tags/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:29:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/posts
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts?_fields=id%2Cslug%2Ctitle%2Cdate%2Cstatus%2Cexcerpt%2Cfeatured_media%2Csticky%2Ccategories%2Ctags&categories=1&tags=1&sticky=true&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:29:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts?_fields=id%2Cslug%2Ctitle%2Cdate%2Cstatus%2Cexcerpt%2Cfeatured_media%2Csticky%2Ccategories%2Ctags&categories=1&tags=1&sticky=true&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=1&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:29:36 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts?_fields=id%2Cslug%2Ctitle%2Cdate%2Cstatus%2Cexcerpt%2Cfeatured_media%2Csticky%2Ccategories%2Ctags&categories=1&tags=1&sticky=true&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=fuzzstring&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:29:36 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts?_fields=id%2Cslug%2Ctitle%2Cdate%2Cstatus%2Cexcerpt%2Cfeatured_media%2Csticky%2Ccategories%2Ctags&categories=1&tags=1&sticky=true&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=fuzzstring&page=1&per_page=1&offset=1&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:29:36 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts?_fields=id%2Cslug%2Ctitle%2Cdate%2Cstatus%2Cexcerpt%2Cfeatured_media%2Csticky%2Ccategories%2Ctags&categories=1&tags=1&sticky=true&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=date&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:29:37 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/pages/{pageId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages/1?_fields=title%2Ccontent&context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:29:55 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages/1?_fields=title%2Ccontent&context=view&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages/1?_fields=title%2Ccontent&context=embed&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages/1?_fields=title%2Ccontent&context=embed&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages/1?_fields=title%2Ccontent&context=edit&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/tags/{tagId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/tags/1?context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:35 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/tags/1?context=view&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:43 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/tags/1?context=embed&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:43 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/tags/1?context=embed&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:43 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/tags/1?context=edit&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:30:43 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/comments
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/comments HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 403 Forbidden\r\nDate: Mon, 27 Apr 2026 07:31:04 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 182\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_post_id","message":"\u62b1\u6b49\uff0c\u60a8\u4e0d\u80fd\u521b\u5efa\u6ca1\u6709\u5bf9\u5e94\u6587\u7ae0\u7684\u8bc4\u8bba\u3002","data":{"status":403}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/comments HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 403 Forbidden\r\nDate: Mon, 27 Apr 2026 07:31:15 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 182\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_post_id","message":"\u62b1\u6b49\uff0c\u60a8\u4e0d\u80fd\u521b\u5efa\u6ca1\u6709\u5bf9\u5e94\u6587\u7ae0\u7684\u8bc4\u8bba\u3002","data":{"status":403}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/tags
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/tags HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:31:15 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 125\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1aname","data":{"status":400,"params":["name"]}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/tags HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:31:28 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 125\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1aname","data":{"status":400,"params":["name"]}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/posts
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:31:28 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 401\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:31:41 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 401\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002","data":null}}}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/pages
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages?_fields=id%2Cslug%2Ctitle&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:31:41 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages?_fields=id%2Cslug%2Ctitle&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=1&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:32:05 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages?_fields=id%2Cslug%2Ctitle&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=fuzzstring&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:32:05 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages?_fields=id%2Cslug%2Ctitle&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=author&_embed=fuzzstring&page=1&per_page=1&offset=1&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:32:05 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/pages?_fields=id%2Cslug%2Ctitle&context=view&search=fuzzstring&status=fuzzstring&order=asc&orderby=date&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:32:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 711\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u3001 private \u3001 trash \u3001 auto-draft \u3001 inherit \u3001 request-pending \u3001 request-confirmed \u3001 request-failed \u3001 request-completed \u548c any \u4e4b\u4e00\u3002","data":null}}}}
+
+
+-----------------------------------------------
+Request: Delete /wp-json/wp/v2/settings/{settingId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/settings/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/settings/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:11 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/settings/{settingId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/settings/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:31 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/settings/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:42 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/comments/{commentId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/comments/1?context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:42 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/comments/1?context=view&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/comments/1?context=embed&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/comments/1?context=embed&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/comments/1?context=edit&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/settings/{settingId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:57 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=embed&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:57 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=embed&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:57 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=edit&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:32:57 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Delete /wp-json/wp/v2/users/{userId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/users/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:33:08 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 133\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1areassign","data":{"status":400,"params":["reassign"]}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/users/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:33:14 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 133\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1areassign","data":{"status":400,"params":["reassign"]}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/categories
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:33:14 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 125\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1aname","data":{"status":400,"params":["name"]}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:33:26 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 125\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_missing_callback_param","message":"\u7f3a\u5c11\u53c2\u6570\uff1aname","data":{"status":400,"params":["name"]}}
+
+
+-----------------------------------------------
+Request: Delete /wp-json/wp/v2/pages/{pageId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/pages/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:33:33 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/pages/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:33:39 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Delete /wp-json/wp/v2/categories/{categoryId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/categories/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 403 Forbidden\r\nDate: Mon, 27 Apr 2026 07:34:11 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 136\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_cannot_delete","message":"\u62b1\u6b49\uff0c\u60a8\u4e0d\u80fd\u5220\u9664\u6b64\u9879\u76ee\u3002","data":{"status":403}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/categories/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 403 Forbidden\r\nDate: Mon, 27 Apr 2026 07:34:16 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 136\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_cannot_delete","message":"\u62b1\u6b49\uff0c\u60a8\u4e0d\u80fd\u5220\u9664\u6b64\u9879\u76ee\u3002","data":{"status":403}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/pages
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/pages HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:34:16 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 401\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002","data":null}}}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/pages HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"fuzzstring"}\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Mon, 27 Apr 2026 07:34:29 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 401\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_param","message":"\u65e0\u6548\u53c2\u6570\uff1astatus","data":{"status":400,"params":{"status":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002"},"details":{"status":{"code":"rest_not_in_enum","message":"status \u4e0d\u662fpublish \u3001 future \u3001 draft \u3001 pending \u548c private \u4e4b\u4e00\u3002","data":null}}}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/pages/{pageId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/pages/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:34:29 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/pages/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:34:42 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/comments/{commentId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/comments/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:34:42 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/comments/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:34:54 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 103\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_comment_invalid_id","message":"\u8bc4\u8bba ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/posts/{postId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts/1?_fields=title%2Ccontent&context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:19 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts/1?_fields=title%2Ccontent&context=view&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:29 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts/1?_fields=title%2Ccontent&context=embed&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:29 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts/1?_fields=title%2Ccontent&context=embed&_embed=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:29 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/posts/1?_fields=title%2Ccontent&context=edit&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:29 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 100\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_post_invalid_id","message":"\u6587\u7ae0 ID \u65e0\u6548\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/tags/{tagId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/tags/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:46 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/tags/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 27 Apr 2026 07:35:58 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 99\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_term_invalid","message":"\u9879\u76ee\u4e0d\u5b58\u5728\u3002","data":{"status":404}}
+
+

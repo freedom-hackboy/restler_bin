@@ -1,0 +1,28 @@
+{
+    "status_code": "500",
+    "checker_name": "UseAfterFreeChecker",
+    "reproducible": true,
+    "verb": "GET",
+    "endpoint": "/api/blog/posts/{postId}",
+    "status_text": "Internal Server Error",
+    "request_sequence": [
+        {
+            "producer_timing_delay": 0,
+            "max_async_wait_time": 0,
+            "replay_request": "POST /api/blog/posts HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\nContent-Type: application/json\r\n\r\n{\n    \"id\":99,\n    \"body\":\"my first blog post\"}\r\n",
+            "response": "HTTP/1.1 201 Created\r\ndate: Fri, 17 Apr 2026 08:17:30 GMT\r\nserver: uvicorn\r\ncontent-length: 41\r\ncontent-type: application/json\r\n\r\n{\"id\":143405,\"body\":\"my first blog post\"}"
+        },
+        {
+            "producer_timing_delay": 0,
+            "max_async_wait_time": 0,
+            "replay_request": "DELETE /api/blog/posts/143405 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n",
+            "response": "HTTP/1.1 204 No Content\r\ndate: Fri, 17 Apr 2026 08:17:30 GMT\r\nserver: uvicorn\r\n\r\n"
+        },
+        {
+            "producer_timing_delay": 0,
+            "max_async_wait_time": 0,
+            "replay_request": "GET /api/blog/posts/143405 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n",
+            "response": "HTTP/1.1 500 Internal Server Error\r\ndate: Fri, 17 Apr 2026 08:17:30 GMT\r\nserver: uvicorn\r\ncontent-length: 21\r\ncontent-type: text/plain; charset=utf-8\r\n\r\nInternal Server Error"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+################################################################################
+ InvalidValueChecker_500
+
+ Hash: InvalidValueChecker_500_5f9bb084cbb3a2529b26bf690142685a65bd355b
+
+ To attempt to reproduce this bug using restler, run restler with the command
+ line option of --replay_log <path_to_this_log>.
+ If an authentication token is required, you must also specify the token_refresh_cmd.
+
+ This log may contain specific values for IDs or names that were generated
+ during fuzzing, using the fuzzing dictionary. Such names will be re-played
+ without modification. You must update the replay log manually with any changes
+ required to execute the requests in your environment (for example, replacing
+ pre-created account, subscription, or other resource IDs, as needed).
+################################################################################
+
+-> GET /api/blog/posts?page=1&per_page=0963012895303452 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8888\r\n\r\n
+! producer_timing_delay 0
+! max_async_wait_time 20
+PREVIOUS RESPONSE: 'HTTP/1.1 500 Internal Server Error\r\ndate: Fri, 17 Apr 2026 08:16:51 GMT\r\nserver: uvicorn\r\ncontent-length: 34\r\ncontent-type: application/json\r\n\r\n{"detail":"per_page is too large"}'
+
