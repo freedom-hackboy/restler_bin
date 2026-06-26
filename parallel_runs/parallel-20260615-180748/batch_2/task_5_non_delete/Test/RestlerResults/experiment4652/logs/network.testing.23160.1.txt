@@ -1,0 +1,1042 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 39f84474a3235c26b9e720a3bd89fe2c11c7dec5
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: '?'
+		- restler_static_string: '_fields='
+		+ restler_fuzzable_string: [id,count,description,name,slug,taxonomy,parent,thumbnail,meta, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: [view, embed, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [fuzzstring, 18, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_group: [asc, desc, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'orderby='
+		+ restler_custom_payload_query: [id, count, ...]
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: [author,wp:term, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: [1, 18, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: [1, 18, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [0, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'slug='
+		+ restler_fuzzable_string: [fuzzstring, 18, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'parent='
+		+ restler_fuzzable_string: [1, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: [fuzzstring, 18, ...]
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.596: Sending: 'GET /wp-json/wp/v2/categories?_fields=id%2Ccount%2Cdescription%2Cname%2Cslug%2Ctaxonomy%2Cparent%2Cthumbnail%2Cmeta&context=view&search=fuzzstring&order=asc&orderby=id&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring&parent=1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 00fdd124-d021-42b3-95c2-b7bc6ee3a6b2\r\n\r\n'
+
+2026-06-15 18:07:59.627: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nX-WP-Total: 0\r\nX-WP-TotalPages: 0\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 2\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n[]'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.654: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 134\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 510233b3-8672-4920-9a5e-72ea4bc363d2\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:07:59.689: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":13},"additional_data":[13,13]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 19)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.704: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 135\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ca3e4d2e-5fd8-483e-a12c-e958bc1c21f2\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:07:59.706: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:07:59.709: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 135\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ca3e4d2e-5fd8-483e-a12c-e958bc1c21f2\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:07:59.747: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":17},"additional_data":[17,17]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 18)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.761: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 132\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 960602ee-a385-4c73-8c4b-dfa45fc32f9c\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:07:59.763: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:07:59.772: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 132\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 960602ee-a385-4c73-8c4b-dfa45fc32f9c\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:07:59.805: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 17)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.819: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 133\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: e82d4ada-472c-4ca8-b26d-6f1c4580e25a\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:07:59.822: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:07:59.825: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 133\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: e82d4ada-472c-4ca8-b26d-6f1c4580e25a\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:07:59.855: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 16)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.868: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 136\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 129d2a82-ed83-40a2-9531-7f061c43ef24\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:07:59.870: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:07:59.873: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 136\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 129d2a82-ed83-40a2-9531-7f061c43ef24\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:07:59.907: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":13},"additional_data":[13,13]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 15)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.923: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 137\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ad299560-8115-4569-a0ea-3e157061f785\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:07:59.925: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:07:59.929: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 137\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ad299560-8115-4569-a0ea-3e157061f785\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:07:59.963: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":17},"additional_data":[17,17]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 14)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:59.978: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 134\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 1817d062-9c72-4caf-a15c-4fd154fa9e14\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:07:59.980: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:07:59.983: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 134\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 1817d062-9c72-4caf-a15c-4fd154fa9e14\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.014: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 13)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.031: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 135\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: bd00d209-c57a-4c34-96f4-f7ef933bb15e\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.033: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.036: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 135\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: bd00d209-c57a-4c34-96f4-f7ef933bb15e\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"publish",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.066: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 12)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.084: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 136\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ff62610f-2bd8-4757-b2fb-677ba64a0fed\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:08:00.087: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.090: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 136\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ff62610f-2bd8-4757-b2fb-677ba64a0fed\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:08:00.124: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:06 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":13},"additional_data":[13,13]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 11)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.140: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 137\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ea79a970-d285-4177-95e3-954763e6792b\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:08:00.142: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.145: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 137\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ea79a970-d285-4177-95e3-954763e6792b\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:08:00.183: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":17},"additional_data":[17,17]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 10)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.200: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 134\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: cbcc8b3e-8a4c-4af3-93fd-bda3aaf6dcac\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.203: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.207: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 134\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: cbcc8b3e-8a4c-4af3-93fd-bda3aaf6dcac\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.237: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 9)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.252: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 135\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 6a792234-009e-498b-bd99-2e0b6b2f473e\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.254: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.257: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 135\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 6a792234-009e-498b-bd99-2e0b6b2f473e\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"private",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.290: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 8)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.307: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 126\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: a245cba0-f629-40b4-b9f0-85cc1f738e34\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:08:00.309: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.312: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 126\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: a245cba0-f629-40b4-b9f0-85cc1f738e34\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:08:00.342: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":13},"additional_data":[13,13]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 7)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.358: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 127\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 09cdcb44-ea65-448c-a769-eab4a664c625\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:08:00.362: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.365: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 127\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 09cdcb44-ea65-448c-a769-eab4a664c625\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:08:00.401: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":17},"additional_data":[17,17]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 6)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.416: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 124\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 84d68a9f-d4d1-4af9-a09c-0056044b9f95\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.419: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.422: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 124\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 84d68a9f-d4d1-4af9-a09c-0056044b9f95\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.452: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.467: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 125\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 2c6460f4-7d59-4052-92f2-9520ccec9407\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.469: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.472: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 125\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 2c6460f4-7d59-4052-92f2-9520ccec9407\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"draft",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.503: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 4)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.517: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 128\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: e3cff12b-ccae-4fe8-bff5-6109bb13abb3\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:08:00.519: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.522: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 128\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: e3cff12b-ccae-4fe8-bff5-6109bb13abb3\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":"restler-name"}\r\n'
+
+2026-06-15 18:08:00.559: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":13},"additional_data":[13,13]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 3)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.572: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 129\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 08e5962f-b7cc-4f6e-8cc0-98974bd0e019\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:08:00.574: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.577: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 129\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 08e5962f-b7cc-4f6e-8cc0-98974bd0e019\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":"semantic-name"}\r\n'
+
+2026-06-15 18:08:00.616: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 168\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"term_exists","message":"\\u7236\\u9879\\u76ee\\u4e2d\\u5df2\\u5b58\\u5728\\u540c\\u540d\\u9879\\u76ee\\u3002","data":{"status":400,"term_id":17},"additional_data":[17,17]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.632: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 126\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 35148a44-f870-4898-89ce-79c8d05929b4\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.635: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.638: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 126\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 35148a44-f870-4898-89ce-79c8d05929b4\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":restler-name}\r\n'
+
+2026-06-15 18:08:00.670: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: a09fc5807db0a2f057c0e3dc23d7a6acc5628a86
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "name":'
+		+ restler_custom_payload: ["restler-name", "semantic-name", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.684: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 127\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 4c0ae687-9f2b-4705-aac4-ef8212af2133\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.687: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.690: Sending: 'POST /wp-json/wp/v2/categories HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 127\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 4c0ae687-9f2b-4705-aac4-ef8212af2133\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"18",\n    "status":"publish",\n    "name":semantic-name}\r\n'
+
+2026-06-15 18:08:00.720: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_invalid_json","message":"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002","data":{"status":400,"json_error_code":4,"json_error_message":"Syntax error"}}'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: ea5b52c60ed3bd4c387159e5789c5b8b3f4f86c6
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [18, 18, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "18", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.738: Sending: 'POST /wp-json/wp/v2/categories/18 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 85\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 10b2a04e-bf75-4fa1-8aad-98081aeb7162\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n'
+
+2026-06-15 18:08:00.740: Empty response received.  Re-creating connection and re-trying.
+2026-06-15 18:08:00.743: Sending: 'POST /wp-json/wp/v2/categories/18 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 85\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 10b2a04e-bf75-4fa1-8aad-98081aeb7162\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n'
+
+2026-06-15 18:08:00.793: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 801\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"id":18,"count":0,"description":"RESTler bootstrap category","link":"http:\\/\\/192.168.65.128:8088\\/category\\/restler-bootstrap-category-20260615180732\\/","name":"restler-bootstrap-category-20260615180732","slug":"restler-bootstrap-category-20260615180732","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/categories\\/18","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/categories"}],"about":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/taxonomies\\/category"}],"wp:post_type":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/posts?categories=18"}],"curies":[{"name":"wp","href":"https:\\/\\/api.w.org\\/{rel}","templated":true}]}}'
+
+
+Generation-1: Rendering Sequence-4
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: f41e9001f439b090e776014613225d2519481ce6
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'categories'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [18, 18, ...]
+		- restler_static_string: '?'
+		- restler_static_string: 'parent='
+		+ restler_fuzzable_string: [1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: [view, embed, ...]
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: [author,wp:term, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: [fuzzstring, 18, ...]
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:00.811: Sending: 'GET /wp-json/wp/v2/categories/18?parent=1&context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: a880275f-59b1-4486-ae4f-91cd80e33963\r\n\r\n'
+
+2026-06-15 18:08:00.848: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:08:07 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 801\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"id":18,"count":0,"description":"RESTler bootstrap category","link":"http:\\/\\/192.168.65.128:8088\\/category\\/restler-bootstrap-category-20260615180732\\/","name":"restler-bootstrap-category-20260615180732","slug":"restler-bootstrap-category-20260615180732","taxonomy":"category","parent":0,"meta":[],"_links":{"self":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/categories\\/18","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/categories"}],"about":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/taxonomies\\/category"}],"wp:post_type":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/posts?categories=18"}],"curies":[{"name":"wp","href":"https:\\/\\/api.w.org\\/{rel}","templated":true}]}}'
+

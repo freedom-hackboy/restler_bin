@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\RLJ\Desktop\study\restler_bin\restler\../engine/restler.py", line 444, in <module>
+    req_collection.set_custom_mutations(custom_mutations, per_endpoint_custom_mutations, settings.custom_value_generators_file_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\RLJ\Desktop\study\restler_bin\engine\engine\core\requests.py", line 1943, in set_custom_mutations
+    self.candidate_values_pool.set_candidate_values(custom_mutations, per_endpoint_custom_mutations)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\RLJ\Desktop\study\restler_bin\engine\engine\primitives.py", line 481, in set_candidate_values
+    validate_string_values(custom_values)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\RLJ\Desktop\study\restler_bin\engine\engine\primitives.py", line 479, in validate_string_values
+    raise ValueError(f"All values for '{key}' must be strings, but found: {values}")
+ValueError: All values for 'restler_fuzzable_int' must be strings, but found: ['1', 16]

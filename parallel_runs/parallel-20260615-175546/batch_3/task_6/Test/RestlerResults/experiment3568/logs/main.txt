@@ -1,0 +1,240 @@
+Random seed: 12345
+Grammar schema file 'C:\Users\RLJ\Desktop\study\restler_bin\parallel_runs\parallel-20260615-175546\batch_3\task_6\grammar.json' does not exist.
+Setting fuzzing schemes: directed-smoke-test
+2026-06-15 17:56:08.322: Going to fuzz a set with 5 requests
+2026-06-15 17:56:08.322: Request-0: Value Combinations: 20
+2026-06-15 17:56:08.322: Request-1: Value Combinations: 20
+2026-06-15 17:56:08.322: Request-2: Value Combinations: 20
+2026-06-15 17:56:08.322: Request-3: Value Combinations: 16
+2026-06-15 17:56:08.322: Request-4: Value Combinations: 20
+2026-06-15 17:56:08.322: Avg. Value Combinations per Request: 19.2
+2026-06-15 17:56:08.322: Median Value Combinations per Request: 20
+2026-06-15 17:56:08.322: Min Value Combinations per Request: 16
+2026-06-15 17:56:08.322: Max Value Combinations per Request: 20
+2026-06-15 17:56:08.322: Total dependencies: 0
+
+2026-06-15 17:56:08.335: Generation: 1 / Sequences Collection Size: 5 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2026-06-15 17:56:08.400: Request 0
+2026-06-15 17:56:08.400: Endpoint - /wp-json/wp/v2/users/{userId}
+2026-06-15 17:56:08.400: Hex Def - 081ee5aa59c374abcba77e49f15d4f19374e2941
+2026-06-15 17:56:08.400: Sequence length that satisfies dependencies: 1
+2026-06-15 17:56:08.401: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: '/'
+		+ restler_custom_payload: ['2', '2']
+		- restler_static_string: '?'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: ['view', 'embed', 'edit']
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: ['author,wp:term', 'fuzzstring', '2']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: ['fuzzstring', '2']
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_module_file', 'token_module_function', 'token_module_data']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+2026-06-15 17:56:09.671: Request 1
+2026-06-15 17:56:09.671: Endpoint - /wp-json/wp/v2/users
+2026-06-15 17:56:09.671: Hex Def - 12d5d5d47f1fa86c85378e64006010bf8f6bf308
+2026-06-15 17:56:09.671: Sequence length that satisfies dependencies: 1
+2026-06-15 17:56:09.672: Rendering INVALID
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_module_file', 'token_module_function', 'token_module_data']
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ['"fuzzstring"', '"2"', '2']
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ['"fuzzstring"', '"2"', '2']
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ['"fuzzstring"', '"2"', '2']
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ['"draft"', '"publish"', '"private"']
+		- restler_static_string: ',\n    "username":'
+		+ restler_custom_payload: ['"restler_user"', 'restler_user']
+		- restler_static_string: ',\n    "email":'
+		+ restler_custom_payload: ['"restler_user@example.com"', 'restler_user@example.com']
+		- restler_static_string: ',\n    "password":'
+		+ restler_custom_payload: ['"StrongPass123!"', 'StrongPass123!']
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+Rendering request 2 from scratch
+
+2026-06-15 17:56:09.730: Request 2
+2026-06-15 17:56:09.730: Endpoint - /wp-json/wp/v2/users
+2026-06-15 17:56:09.730: Hex Def - 569adfd9ea08ca5ec42daad4d775e2f4f69c4539
+2026-06-15 17:56:09.730: Sequence length that satisfies dependencies: 1
+2026-06-15 17:56:09.730: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: '?'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: ['view', 'embed', 'edit']
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['fuzzstring', '2']
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_group: ['asc', 'desc']
+		- restler_static_string: '&'
+		- restler_static_string: 'orderby='
+		+ restler_custom_payload_query: ['id', 'count', 'description', 'name', 'author', 'date', 'title', 'author', 'date', 'title', 'id']
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: ['author,wp:term', 'fuzzstring', '2']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['1', '2']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['1', '2']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['0', '1', '2']
+		- restler_static_string: '&'
+		- restler_static_string: 'slug='
+		+ restler_fuzzable_string: ['fuzzstring', '2']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: ['fuzzstring', '2']
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_module_file', 'token_module_function', 'token_module_data']
+		- restler_static_string: '\r\n'
+
+Rendering request 3 from scratch
+
+2026-06-15 17:56:09.844: Request 3
+2026-06-15 17:56:09.844: Endpoint - /wp-json/wp/v2/users/{userId}
+2026-06-15 17:56:09.844: Hex Def - 952b3c60072d4824cab21a2b36de9c01ba163355
+2026-06-15 17:56:09.844: Sequence length that satisfies dependencies: 1
+2026-06-15 17:56:09.845: Rendering VALID
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: '/'
+		+ restler_custom_payload: ['2', '2']
+		- restler_static_string: '?'
+		- restler_static_string: 'force='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'reassign='
+		+ restler_custom_payload_query: ['1', '2', '1', '2']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_module_file', 'token_module_function', 'token_module_data']
+		- restler_static_string: '\r\n'
+
+Rendering request 4 from scratch
+
+2026-06-15 17:56:10.793: Request 4
+2026-06-15 17:56:10.793: Endpoint - /wp-json/wp/v2/users/{userId}
+2026-06-15 17:56:10.793: Hex Def - bd5923f6a9ef6accd680d832fb0d6ce803d9a0fb
+2026-06-15 17:56:10.793: Sequence length that satisfies dependencies: 1
+2026-06-15 17:56:10.794: Rendering INVALID
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: '/'
+		+ restler_custom_payload: ['2', '2']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_module_file', 'token_module_function', 'token_module_data']
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ['"fuzzstring"', '"2"', '2']
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ['"fuzzstring"', '"2"', '2']
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ['"fuzzstring"', '"2"', '2']
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 17:56:10.796: Generation: 1 / Sequences Collection Size: 3 
+(After directed-smoke-test Render)
+
+2026-06-15 17:56:10.797: Final Swagger spec coverage: 3 / 5
+2026-06-15 17:56:10.797: Rendered requests: 5 / 5
+2026-06-15 17:56:10.797: Rendered requests with "valid" status codes: 3 / 5
+2026-06-15 17:56:10.797: Num fully valid requests (no resource creation failures): 3
+2026-06-15 17:56:10.797: Num requests not rendered due to invalid sequence re-renders: 0
+2026-06-15 17:56:10.797: Num invalid requests caused by failed resource creations: 0
+2026-06-15 17:56:10.797: Total Creations of Dyn Objects: 0
+2026-06-15 17:56:10.797: Total Requests Sent: {'gc': 0, 'main_driver': 43}
+2026-06-15 17:56:10.797: Bug Buckets: {'main_driver_500': 1}
+
+Testing completed -- below are the final stats:
+
+2026-06-15 17:56:10.808: Final Swagger spec coverage: 3 / 5
+2026-06-15 17:56:10.808: Rendered requests: 5 / 5
+2026-06-15 17:56:10.808: Rendered requests with "valid" status codes: 3 / 5
+2026-06-15 17:56:10.808: Num fully valid requests (no resource creation failures): 3
+2026-06-15 17:56:10.808: Num requests not rendered due to invalid sequence re-renders: 0
+2026-06-15 17:56:10.808: Num invalid requests caused by failed resource creations: 0
+2026-06-15 17:56:10.808: Total Creations of Dyn Objects: 0
+2026-06-15 17:56:10.808: Total Requests Sent: {'gc': 0, 'main_driver': 43}
+2026-06-15 17:56:10.808: Bug Buckets: {'main_driver_500': 1}

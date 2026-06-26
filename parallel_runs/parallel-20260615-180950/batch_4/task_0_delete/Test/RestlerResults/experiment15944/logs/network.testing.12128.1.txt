@@ -1,0 +1,31 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 12)
+	Request hash: b272b4d0179d1dd0d3a07781c798ca8b2ae9bcca
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'pages'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [72, 73, ...]
+		- restler_static_string: '?'
+		- restler_static_string: 'force='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:10:10.043: Sending: 'DELETE /wp-json/wp/v2/pages/72?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: ed10f7a0-aede-4372-918f-e1b865a9d636\r\n\r\n'
+
+2026-06-15 18:10:10.105: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:10:19 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 1058\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"deleted":true,"previous":{"id":72,"date":"2026-06-15T18:09:50","date_gmt":"2026-06-15T10:09:50","guid":{"rendered":"http:\\/\\/192.168.65.128:8088\\/restler-bootstrap-page-20260615180941\\/","raw":"http:\\/\\/192.168.65.128:8088\\/restler-bootstrap-page-20260615180941\\/"},"modified":"2026-06-15T18:10:04","modified_gmt":"2026-06-15T10:10:04","password":"","slug":"restler-bootstrap-page-20260615180941","status":"publish","type":"page","link":"http:\\/\\/192.168.65.128:8088\\/restler-bootstrap-page-20260615180941\\/","title":{"raw":"fuzzstring","rendered":"fuzzstring"},"content":{"raw":"fuzzstring","rendered":"<p>fuzzstring<\\/p>\\n","protected":false,"block_version":0},"excerpt":{"raw":"fuzzstring","rendered":"<p>fuzzstring<\\/p>\\n","protected":false},"author":1,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"footnotes":""},"permalink_template":"http:\\/\\/192.168.65.128:8088\\/%pagename%\\/","generated_slug":"fuzzstring","class_list":["post-72","page","type-page","status-publish","hentry"]}}'
+

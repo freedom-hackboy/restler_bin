@@ -1,0 +1,182 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 364951db54afe80b50e19623593948e7a9ea8a95
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'pages'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [66, 66, ...]
+		- restler_static_string: '?'
+		- restler_static_string: '_fields='
+		+ restler_fuzzable_string: [title,content, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: [view, embed, ...]
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: [author,wp:term, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: [fuzzstring, 66, ...]
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:50.968: Sending: 'GET /wp-json/wp/v2/pages/66?_fields=title%2Ccontent&context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: eda0add3-4a7d-4c91-9418-8120bae61d67\r\n\r\n'
+
+2026-06-15 18:07:51.003: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:07:58 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/restler-bootstrap-page-20260615180732/>; rel="alternate"; type=text/html\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 146\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"title":{"rendered":"restler bootstrap page 20260615180732"},"content":{"rendered":"<p>restler bootstrap page content<\\/p>\\n","protected":false}}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 7d89fa2452c37e88b1ce917e8119eb865c70c195
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'pages'
+		- restler_static_string: '?'
+		- restler_static_string: '_fields='
+		+ restler_fuzzable_string: [id,slug,title, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: [view, embed, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [fuzzstring, 66, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_custom_payload_query: [draft, publish, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_group: [asc, desc, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'orderby='
+		+ restler_fuzzable_group: [author, date, ...]
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: [author,wp:term, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: [1, 66, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: [1, 66, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [0, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'slug='
+		+ restler_fuzzable_string: [fuzzstring, 66, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: [fuzzstring, 66, ...]
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:51.027: Sending: 'GET /wp-json/wp/v2/pages?_fields=id%2Cslug%2Ctitle&context=view&search=fuzzstring&status=draft&order=asc&orderby=author&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 30eb769e-a890-4e63-9f76-32fe5dae76e9\r\n\r\n'
+
+2026-06-15 18:07:51.056: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:07:58 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nX-WP-Total: 0\r\nX-WP-TotalPages: 0\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 2\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n[]'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: c46b508f7b24cc8499be2c5567ba6987b4c7fab0
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'pages'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "66", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "66", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "66", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:51.075: Sending: 'POST /wp-json/wp/v2/pages HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 107\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 81e7bb1e-66f8-426a-b1d5-3251f4474831\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring",\n    "status":"draft"}\r\n'
+
+2026-06-15 18:07:51.118: Received: 'HTTP/1.1 201 Created\r\nDate: Mon, 15 Jun 2026 10:07:58 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nLocation: http://192.168.65.128:8088/wp-json/wp/v2/pages/68\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 1978\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"id":68,"date":"2026-06-15T18:07:58","date_gmt":"2026-06-15T10:07:58","guid":{"rendered":"http:\\/\\/192.168.65.128:8088\\/?page_id=68","raw":"http:\\/\\/192.168.65.128:8088\\/?page_id=68"},"modified":"2026-06-15T18:07:58","modified_gmt":"2026-06-15T10:07:58","password":"","slug":"","status":"draft","type":"page","link":"http:\\/\\/192.168.65.128:8088\\/?page_id=68","title":{"raw":"fuzzstring","rendered":"fuzzstring"},"content":{"raw":"fuzzstring","rendered":"<p>fuzzstring<\\/p>\\n","protected":false,"block_version":0},"excerpt":{"raw":"fuzzstring","rendered":"<p>fuzzstring<\\/p>\\n","protected":false},"author":1,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"footnotes":""},"permalink_template":"http:\\/\\/192.168.65.128:8088\\/%pagename%\\/","generated_slug":"fuzzstring","class_list":["post-68","page","type-page","status-draft","hentry"],"_links":{"self":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/68","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages"}],"about":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/types\\/page"}],"author":[{"embeddable":true,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/users\\/1"}],"replies":[{"embeddable":true,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/comments?post=68"}],"version-history":[{"count":0,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/68\\/revisions"}],"wp:attachment":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/media?parent=68"}],"wp:action-publish":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/68"}],"wp:action-unfiltered-html":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/68"}],"wp:action-assign-author":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/68"}],"curies":[{"name":"wp","href":"https:\\/\\/api.w.org\\/{rel}","templated":true}]}}'
+
+
+Generation-1: Rendering Sequence-4
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: c79c58ad6180507e8782feafa2c1e716afb484d2
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'pages'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [66, 66, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "66", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "66", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "66", ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:07:51.136: Sending: 'POST /wp-json/wp/v2/pages/66 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 85\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: da8e8de4-5d8a-4616-972e-a35c08bddfb0\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n'
+
+2026-06-15 18:07:51.192: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:07:58 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 2218\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"id":66,"date":"2026-06-15T18:07:42","date_gmt":"2026-06-15T10:07:42","guid":{"rendered":"http:\\/\\/192.168.65.128:8088\\/restler-bootstrap-page-20260615180732\\/","raw":"http:\\/\\/192.168.65.128:8088\\/restler-bootstrap-page-20260615180732\\/"},"modified":"2026-06-15T18:07:58","modified_gmt":"2026-06-15T10:07:58","password":"","slug":"restler-bootstrap-page-20260615180732","status":"publish","type":"page","link":"http:\\/\\/192.168.65.128:8088\\/restler-bootstrap-page-20260615180732\\/","title":{"raw":"fuzzstring","rendered":"fuzzstring"},"content":{"raw":"fuzzstring","rendered":"<p>fuzzstring<\\/p>\\n","protected":false,"block_version":0},"excerpt":{"raw":"fuzzstring","rendered":"<p>fuzzstring<\\/p>\\n","protected":false},"author":1,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"footnotes":""},"permalink_template":"http:\\/\\/192.168.65.128:8088\\/%pagename%\\/","generated_slug":"fuzzstring","class_list":["post-66","page","type-page","status-publish","hentry"],"_links":{"self":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/66","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages"}],"about":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/types\\/page"}],"author":[{"embeddable":true,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/users\\/1"}],"replies":[{"embeddable":true,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/comments?post=66"}],"version-history":[{"count":1,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/66\\/revisions"}],"predecessor-version":[{"id":70,"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/66\\/revisions\\/70"}],"wp:attachment":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/media?parent=66"}],"wp:action-publish":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/66"}],"wp:action-unfiltered-html":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/66"}],"wp:action-assign-author":[{"href":"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/pages\\/66"}],"curies":[{"name":"wp","href":"https:\\/\\/api.w.org\\/{rel}","templated":true}]}}'
+

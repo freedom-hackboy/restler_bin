@@ -193,7 +193,7 @@ class DictUpdater:
             if self._looks_like_route_level_failure(constraint):
                 continue
 
-            usable.append(constraint)
+            usable.append(constraint) 
 
         return usable
 

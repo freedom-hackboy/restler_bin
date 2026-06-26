@@ -1,0 +1,106 @@
+{
+  "task_package": {
+    "task_id": "task_0",
+    "component_id": "component_2",
+    "operation_ids": [
+      "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "GET /wp-json/wp/v2/pages",
+      "GET /wp-json/wp/v2/pages/{pageId}",
+      "POST /wp-json/wp/v2/pages",
+      "POST /wp-json/wp/v2/pages/{pageId}"
+    ],
+    "operation_count": 5,
+    "priority": 3.25,
+    "parallel_safe": true,
+    "shared_state_keys": [
+      "/wp-json/wp/v2/pages"
+    ],
+    "edge_type_distribution": {
+      "feedback_resource_discovery": 3,
+      "feedback_resource_id_dependency": 4,
+      "resource_create_consume": 3,
+      "resource_discovery_consume": 3,
+      "shared_auth_context": 10,
+      "state_conflict_order": 2
+    },
+    "worker_hints": {
+      "preserve_internal_restler_sequence": true,
+      "share_auth_token": true,
+      "share_resource_pool_keys": [
+        "/wp-json/wp/v2/pages"
+      ]
+    }
+  },
+  "grammar_summary": {
+    "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+    "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\grammar.py",
+    "requested_operation_count": 5,
+    "written_operation_count": 5,
+    "missing_operation_ids": []
+  },
+  "grammar_patch_summary": {
+    "enabled": true,
+    "patched": true,
+    "body_fields_added": [],
+    "query_fields_added": [],
+    "query_primitives_replaced": [
+      {
+        "operation_id": "GET /wp-json/wp/v2/pages",
+        "field": "status",
+        "payload": "status"
+      }
+    ],
+    "path_primitives_replaced": []
+  },
+  "dictionary_seed_summary": {
+    "semantic_feedback": {
+      "base_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\dict.json",
+      "output_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\dict.json",
+      "semantic_constraint_count": 13,
+      "resource_pool_count": 0,
+      "operation_scope": [
+        "DELETE /wp-json/wp/v2/pages/{pageId}",
+        "GET /wp-json/wp/v2/pages",
+        "GET /wp-json/wp/v2/pages/{pageId}",
+        "POST /wp-json/wp/v2/pages",
+        "POST /wp-json/wp/v2/pages/{pageId}"
+      ],
+      "resource_scope": [
+        "/wp-json/wp/v2/pages"
+      ],
+      "seeded_parameters": {
+        "status": [
+          "draft",
+          "publish",
+          "private"
+        ]
+      },
+      "seeded_resource_values": {},
+      "wordpress_defaults_enabled": true,
+      "prune_endpoint_query_payloads": false,
+      "include_endpoint_query_semantics": true,
+      "enabled": true,
+      "semantic_constraint_paths": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round0\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round1\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round2\\semantic_constraints.jsonl"
+      ],
+      "seeded_parameter_count": 1
+    },
+    "resource_pool": {
+      "enabled": true,
+      "seeded_value_count": 5,
+      "resource_keys": [
+        "/wp-json/wp/v2/pages"
+      ],
+      "parameter_names": [
+        "id",
+        "pageId",
+        "parent"
+      ],
+      "numeric_value_count": 5
+    }
+  },
+  "dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\dict.json",
+  "settings_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+}

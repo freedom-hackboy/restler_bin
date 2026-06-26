@@ -1,0 +1,69 @@
+{
+  "task_package": {
+    "task_id": "task_6",
+    "component_id": "component_6",
+    "operation_ids": [
+      "DELETE /wp-json/wp/v2/users/{userId}",
+      "GET /wp-json/wp/v2/users",
+      "GET /wp-json/wp/v2/users/{userId}",
+      "POST /wp-json/wp/v2/users",
+      "POST /wp-json/wp/v2/users/{userId}"
+    ],
+    "operation_count": 5,
+    "priority": 1.5,
+    "parallel_safe": true,
+    "shared_state_keys": [
+      "/wp-json/wp/v2/users"
+    ],
+    "edge_type_distribution": {
+      "resource_create_consume": 3,
+      "resource_discovery_consume": 3,
+      "shared_auth_context": 10,
+      "state_conflict_order": 2
+    },
+    "worker_hints": {
+      "preserve_internal_restler_sequence": true,
+      "share_auth_token": true,
+      "share_resource_pool_keys": [
+        "/wp-json/wp/v2/users"
+      ]
+    }
+  },
+  "grammar_summary": {
+    "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+    "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-173709\\batch_3\\task_6\\grammar.py",
+    "requested_operation_count": 5,
+    "written_operation_count": 5,
+    "missing_operation_ids": []
+  },
+  "dictionary_seed_summary": {
+    "semantic_feedback": {
+      "enabled": false,
+      "semantic_constraint_paths": [],
+      "semantic_constraint_count": 0,
+      "seeded_parameter_count": 0,
+      "operation_scope": [
+        "DELETE /wp-json/wp/v2/users/{userId}",
+        "GET /wp-json/wp/v2/users",
+        "GET /wp-json/wp/v2/users/{userId}",
+        "POST /wp-json/wp/v2/users",
+        "POST /wp-json/wp/v2/users/{userId}"
+      ],
+      "resource_scope": [
+        "/wp-json/wp/v2/users"
+      ]
+    },
+    "resource_pool": {
+      "enabled": true,
+      "seeded_value_count": 0,
+      "resource_keys": [
+        "/wp-json/wp/v2/users"
+      ],
+      "parameter_names": [
+        "userId"
+      ]
+    }
+  },
+  "dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-173709\\batch_3\\task_6\\dict.json",
+  "settings_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+}

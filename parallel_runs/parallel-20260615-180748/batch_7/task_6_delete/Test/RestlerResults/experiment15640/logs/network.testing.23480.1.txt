@@ -1,0 +1,34 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 16)
+	Request hash: 952b3c60072d4824cab21a2b36de9c01ba163355
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [5, 5, ...]
+		- restler_static_string: '?'
+		- restler_static_string: 'force='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'reassign='
+		+ restler_custom_payload_query: [1, 5, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:08:20.565: Sending: 'DELETE /wp-json/wp/v2/users/5?force=true&reassign=1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: e26413df-5d8e-4941-a6e5-49517c717bfa\r\n\r\n'
+
+2026-06-15 18:08:20.633: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:08:30 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 992\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"deleted":true,"previous":{"id":5,"username":"restler_user_20260615180732","name":"restler_user_20260615180732","first_name":"","last_name":"","email":"restler_user_20260615180732@example.com","url":"","description":"","link":"http:\\/\\/192.168.65.128:8088\\/author\\/restler_user_20260615180732\\/","locale":"zh_CN","nickname":"restler_user_20260615180732","slug":"restler_user_20260615180732","roles":["subscriber"],"registered_date":"2026-06-15T10:07:42+00:00","capabilities":{"read":true,"level_0":true,"subscriber":true},"extra_capabilities":{"subscriber":true},"avatar_urls":{"24":"https:\\/\\/secure.gravatar.com\\/avatar\\/ad949e318d7c46db3e384f17449b9343bd484935b16606d2cc6a1af57d26ba83?s=24&d=mm&r=g","48":"https:\\/\\/secure.gravatar.com\\/avatar\\/ad949e318d7c46db3e384f17449b9343bd484935b16606d2cc6a1af57d26ba83?s=48&d=mm&r=g","96":"https:\\/\\/secure.gravatar.com\\/avatar\\/ad949e318d7c46db3e384f17449b9343bd484935b16606d2cc6a1af57d26ba83?s=96&d=mm&r=g"},"meta":{"persisted_preferences":[]}}}'
+

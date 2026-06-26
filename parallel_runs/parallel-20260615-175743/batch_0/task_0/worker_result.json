@@ -1,0 +1,170 @@
+{
+  "task_id": "task_0",
+  "status": "completed",
+  "returncode": 0,
+  "error": null,
+  "started_at": "2026-06-15 17:57:43",
+  "finished_at": "2026-06-15 17:57:49",
+  "duration_sec": 6.03,
+  "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0",
+  "command": [
+    "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+    "test",
+    "--grammar_file",
+    "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\grammar.py",
+    "--dictionary_file",
+    "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\dict.json",
+    "--no_ssl",
+    "--settings",
+    "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+  ],
+  "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\worker_stdout.txt",
+  "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\worker_stderr.txt",
+  "task_package": {
+    "task_id": "task_0",
+    "component_id": "component_2",
+    "operation_ids": [
+      "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "GET /wp-json/wp/v2/pages",
+      "GET /wp-json/wp/v2/pages/{pageId}",
+      "POST /wp-json/wp/v2/pages",
+      "POST /wp-json/wp/v2/pages/{pageId}"
+    ],
+    "operation_count": 5,
+    "priority": 3.25,
+    "parallel_safe": true,
+    "shared_state_keys": [
+      "/wp-json/wp/v2/pages"
+    ],
+    "edge_type_distribution": {
+      "feedback_resource_discovery": 3,
+      "feedback_resource_id_dependency": 4,
+      "resource_create_consume": 3,
+      "resource_discovery_consume": 3,
+      "shared_auth_context": 10,
+      "state_conflict_order": 2
+    },
+    "worker_hints": {
+      "preserve_internal_restler_sequence": true,
+      "share_auth_token": true,
+      "share_resource_pool_keys": [
+        "/wp-json/wp/v2/pages"
+      ]
+    }
+  },
+  "grammar_summary": {
+    "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+    "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\grammar.py",
+    "requested_operation_count": 5,
+    "written_operation_count": 5,
+    "missing_operation_ids": []
+  },
+  "grammar_patch_summary": {
+    "enabled": true,
+    "patched": true,
+    "body_fields_added": [],
+    "query_fields_added": [],
+    "query_primitives_replaced": [
+      {
+        "operation_id": "GET /wp-json/wp/v2/pages",
+        "field": "status",
+        "payload": "status"
+      }
+    ],
+    "path_primitives_replaced": []
+  },
+  "dictionary_seed_summary": {
+    "semantic_feedback": {
+      "base_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\dict.json",
+      "output_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\dict.json",
+      "semantic_constraint_count": 13,
+      "resource_pool_count": 0,
+      "operation_scope": [
+        "DELETE /wp-json/wp/v2/pages/{pageId}",
+        "GET /wp-json/wp/v2/pages",
+        "GET /wp-json/wp/v2/pages/{pageId}",
+        "POST /wp-json/wp/v2/pages",
+        "POST /wp-json/wp/v2/pages/{pageId}"
+      ],
+      "resource_scope": [
+        "/wp-json/wp/v2/pages"
+      ],
+      "seeded_parameters": {
+        "status": [
+          "draft",
+          "publish",
+          "private"
+        ]
+      },
+      "seeded_resource_values": {},
+      "wordpress_defaults_enabled": true,
+      "prune_endpoint_query_payloads": false,
+      "include_endpoint_query_semantics": true,
+      "enabled": true,
+      "semantic_constraint_paths": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round0\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round1\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round2\\semantic_constraints.jsonl"
+      ],
+      "seeded_parameter_count": 1
+    },
+    "resource_pool": {
+      "enabled": true,
+      "seeded_value_count": 5,
+      "resource_keys": [
+        "/wp-json/wp/v2/pages"
+      ],
+      "parameter_names": [
+        "id",
+        "pageId",
+        "parent"
+      ],
+      "numeric_value_count": 5
+    }
+  },
+  "artifacts": {
+    "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test",
+    "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test\\RestlerResults\\experiment20316\\logs\\testing_summary.json",
+    "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test\\RestlerResults\\experiment20316\\logs\\speccov.json",
+    "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test\\error_logs\\restler_error_summary.jsonl",
+    "bugs_path": null,
+    "network_logs": [
+      "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test\\RestlerResults\\experiment20316\\logs\\network.auth.23688.1.txt",
+      "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test\\RestlerResults\\experiment20316\\logs\\network.gc.13080.1.txt",
+      "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-175743\\batch_0\\task_0\\Test\\RestlerResults\\experiment20316\\logs\\network.testing.23688.1.txt"
+    ],
+    "testing_summary": {
+      "final_spec_coverage": "3 / 5",
+      "rendered_requests": "5 / 5",
+      "rendered_requests_valid_status": "3 / 5",
+      "num_fully_valid": 3,
+      "num_sequence_failures": 0,
+      "num_invalid_by_failed_resource_creations": 0,
+      "total_object_creations": 0,
+      "total_requests_sent": {
+        "gc": 0,
+        "main_driver": 48
+      },
+      "bug_buckets": {},
+      "reproducible_bug_buckets": {},
+      "settings": {
+        "random_seed": 12345
+      }
+    },
+    "speccov_summary": {
+      "available": true,
+      "endpoint_total": 5,
+      "valid_endpoint_count": 3,
+      "invalid_endpoint_count": 2
+    },
+    "error_summary_count": 3,
+    "bug_summary": {
+      "available": false,
+      "total_bug_buckets": 0
+    },
+    "resource_ids": [
+      57,
+      59
+    ]
+  }
+}

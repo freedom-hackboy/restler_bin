@@ -1,0 +1,49 @@
+
+2026-06-15 18:11:39.771: Generation-1
+2026-06-15 18:11:39.771: 	Rendered requests: 4 / 4
+2026-06-15 18:11:39.771: 	Rendered requests with "valid" status codes: 3 / 4
+2026-06-15 18:11:39.771: 	Rendered requests determined to be fully valid (no resource creation failures): 3 / 4
+2026-06-15 18:11:39.771: List of failing requests:
+	Request: 1
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Content-Type: '
+		- restler_static_string: 'application/json'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+		- restler_static_string: '{'
+		- restler_static_string: '\n    "title":'
+		+ restler_fuzzable_string: ["fuzzstring", "7", ...]
+		- restler_static_string: ',\n    "content":'
+		+ restler_fuzzable_string: ["fuzzstring", "7", ...]
+		- restler_static_string: ',\n    "excerpt":'
+		+ restler_fuzzable_string: ["fuzzstring", "7", ...]
+		- restler_static_string: ',\n    "status":'
+		+ restler_custom_payload: ["draft", "publish", ...]
+		- restler_static_string: ',\n    "username":'
+		+ restler_custom_payload: ["restler_user", restler_user, ...]
+		- restler_static_string: ',\n    "email":'
+		+ restler_custom_payload: ["restler_user@example.com", restler_user@example.com, ...]
+		- restler_static_string: ',\n    "password":'
+		+ restler_custom_payload: ["StrongPass123!", StrongPass123!, ...]
+		- restler_static_string: '}'
+		- restler_static_string: '\r\n'
+
+-------------------------
+
+
+2026-06-15 18:11:39.777: 	Never Rendered requests:
+-------------------------
+

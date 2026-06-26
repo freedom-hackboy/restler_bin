@@ -1,0 +1,76 @@
+This file contains the failing requests, ordered by the number of blocked dependent requests.
+To improve coverage, fix the failing requests in the order listed in this file.
+
+Note: some requests are labeled as 'sequence failure'.
+This means the request depends on another request that is failing intermittently.
+For example, a DELETE request for a resource may be skipped because the resource
+PUT request failed due to exceeding quota.  The same PUT request succeeded earlier (and may
+succeed later depending on the resource clean-up behavior in the service), so it is
+considered an intermittent failure.
+
+-----------------------------------------------
+Request: Delete /wp-json/wp/v2/settings/{settingId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/settings/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> DELETE /wp-json/wp/v2/settings/1?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Post /wp-json/wp/v2/settings/{settingId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/settings/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> POST /wp-json/wp/v2/settings/1 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    "title":"fuzzstring",\n    "content":"fuzzstring",\n    "excerpt":"fuzzstring"}\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+-----------------------------------------------
+Request: Get /wp-json/wp/v2/settings/{settingId}
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=author HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=wp:term HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=author HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=wp:term HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /wp-json/wp/v2/settings/1?context=view&_embed=author HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n
+	< HTTP/1.1 404 Not Found\r\nDate: Mon, 15 Jun 2026 09:52:47 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 148\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"code":"rest_no_route","message":"\u672a\u627e\u5230\u5339\u914d URL \u548c\u8bf7\u6c42\u65b9\u5f0f\u7684\u8def\u7531\u3002","data":{"status":404}}
+
+

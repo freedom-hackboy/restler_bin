@@ -1,0 +1,43 @@
+
+2026-06-15 18:05:11.569: Generation-1
+2026-06-15 18:05:11.569: 	Rendered requests: 5 / 5
+2026-06-15 18:05:11.569: 	Rendered requests with "valid" status codes: 4 / 5
+2026-06-15 18:05:11.569: 	Rendered requests determined to be fully valid (no resource creation failures): 4 / 5
+2026-06-15 18:05:11.569: List of failing requests:
+	Request: 4
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'posts'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [60, 60, ...]
+		- restler_static_string: '?'
+		- restler_static_string: '_fields='
+		+ restler_fuzzable_string: [title,content, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: [view, embed, ...]
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: [author,wp:term, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		+ restler_fuzzable_string: [fuzzstring, 60, ...]
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+-------------------------
+
+
+2026-06-15 18:05:11.574: 	Never Rendered requests:
+-------------------------
+

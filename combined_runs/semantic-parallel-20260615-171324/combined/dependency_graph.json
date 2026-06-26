@@ -1,0 +1,2698 @@
+{
+  "schema_version": 1,
+  "source": {
+    "grammar_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\combined_runs\\semantic-parallel-20260615-171324\\combined\\grammar_semantic_seeded.py",
+    "constraints_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\combined_runs\\semantic-parallel-20260615-171324\\combined\\merged_semantic_constraints.jsonl",
+    "applied_constraints_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\combined_runs\\semantic-parallel-20260615-171324\\combined\\merged_applied_constraints.jsonl",
+    "min_confidence": 0.6
+  },
+  "summary": {
+    "operation_count": 36,
+    "edge_count": 158,
+    "component_count": 8,
+    "task_package_count": 8,
+    "edge_type_distribution": {
+      "feedback_resource_discovery": 15,
+      "feedback_resource_id_dependency": 17,
+      "resource_create_consume": 21,
+      "resource_discovery_consume": 21,
+      "shared_auth_context": 70,
+      "state_conflict_order": 14
+    }
+  },
+  "operations": [
+    {
+      "operation_id": "GET /wp-json/wp/v2/categories",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/categories",
+      "request_id": "/wp-json/wp/v2/categories",
+      "resource_key": "/wp-json/wp/v2/categories",
+      "collection_key": "/wp-json/wp/v2/categories",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "_fields",
+        "context",
+        "offset",
+        "order",
+        "orderby",
+        "page",
+        "parent",
+        "per_page",
+        "search",
+        "slug"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 428,
+      "line_end": 486,
+      "semantic_parameters": [
+        {
+          "parameter": "orderby",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.9
+        },
+        {
+          "parameter": "orderby",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.735
+        },
+        {
+          "parameter": "orderby",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.715
+        }
+      ]
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/categories",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/categories",
+      "request_id": "/wp-json/wp/v2/categories",
+      "resource_key": "/wp-json/wp/v2/categories",
+      "collection_key": "/wp-json/wp/v2/categories",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 487,
+      "line_end": 527,
+      "semantic_parameters": [
+        {
+          "parameter": "name",
+          "location": "body",
+          "constraint_type": "required",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/categories/{categoryId}",
+      "request_id": "/wp-json/wp/v2/categories/{categoryId}",
+      "resource_key": "/wp-json/wp/v2/categories",
+      "collection_key": "/wp-json/wp/v2/categories",
+      "crud_role": "delete",
+      "path_params": [
+        "categoryId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 605,
+      "line_end": 632,
+      "semantic_parameters": [
+        {
+          "parameter": "force",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/categories/{categoryId}",
+      "request_id": "/wp-json/wp/v2/categories/{categoryId}",
+      "resource_key": "/wp-json/wp/v2/categories",
+      "collection_key": "/wp-json/wp/v2/categories",
+      "crud_role": "read_item",
+      "path_params": [
+        "categoryId"
+      ],
+      "query_params": [
+        "_embed",
+        "context",
+        "parent"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 528,
+      "line_end": 564
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/categories/{categoryId}",
+      "request_id": "/wp-json/wp/v2/categories/{categoryId}",
+      "resource_key": "/wp-json/wp/v2/categories",
+      "collection_key": "/wp-json/wp/v2/categories",
+      "crud_role": "update_item",
+      "path_params": [
+        "categoryId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 565,
+      "line_end": 604
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/comments",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/comments",
+      "request_id": "/wp-json/wp/v2/comments",
+      "resource_key": "/wp-json/wp/v2/comments",
+      "collection_key": "/wp-json/wp/v2/comments",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "context",
+        "offset",
+        "order",
+        "orderby",
+        "page",
+        "per_page",
+        "search",
+        "slug"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 829,
+      "line_end": 881,
+      "semantic_parameters": [
+        {
+          "parameter": "orderby",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/comments",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/comments",
+      "request_id": "/wp-json/wp/v2/comments",
+      "resource_key": "/wp-json/wp/v2/comments",
+      "collection_key": "/wp-json/wp/v2/comments",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 882,
+      "line_end": 922,
+      "semantic_parameters": [
+        {
+          "parameter": "post_id",
+          "location": "body",
+          "constraint_type": "required",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/comments/{commentId}",
+      "request_id": "/wp-json/wp/v2/comments/{commentId}",
+      "resource_key": "/wp-json/wp/v2/comments",
+      "collection_key": "/wp-json/wp/v2/comments",
+      "crud_role": "delete",
+      "path_params": [
+        "commentId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 997,
+      "line_end": 1024
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/comments/{commentId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/comments/{commentId}",
+      "request_id": "/wp-json/wp/v2/comments/{commentId}",
+      "resource_key": "/wp-json/wp/v2/comments",
+      "collection_key": "/wp-json/wp/v2/comments",
+      "crud_role": "read_item",
+      "path_params": [
+        "commentId"
+      ],
+      "query_params": [
+        "_embed",
+        "context"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 923,
+      "line_end": 956
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/comments/{commentId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/comments/{commentId}",
+      "request_id": "/wp-json/wp/v2/comments/{commentId}",
+      "resource_key": "/wp-json/wp/v2/comments",
+      "collection_key": "/wp-json/wp/v2/comments",
+      "crud_role": "update_item",
+      "path_params": [
+        "commentId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 957,
+      "line_end": 996
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/pages",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/pages",
+      "request_id": "/wp-json/wp/v2/pages",
+      "resource_key": "/wp-json/wp/v2/pages",
+      "collection_key": "/wp-json/wp/v2/pages",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "_fields",
+        "context",
+        "offset",
+        "order",
+        "orderby",
+        "page",
+        "per_page",
+        "search",
+        "slug",
+        "status"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 9,
+      "line_end": 67
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/pages",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/pages",
+      "request_id": "/wp-json/wp/v2/pages",
+      "resource_key": "/wp-json/wp/v2/pages",
+      "collection_key": "/wp-json/wp/v2/pages",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 68,
+      "line_end": 108,
+      "semantic_parameters": [
+        {
+          "parameter": "status",
+          "location": "body",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        },
+        {
+          "parameter": "status",
+          "location": "body",
+          "constraint_type": "enum",
+          "confidence": 0.99
+        }
+      ]
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/pages/{pageId}",
+      "request_id": "/wp-json/wp/v2/pages/{pageId}",
+      "resource_key": "/wp-json/wp/v2/pages",
+      "collection_key": "/wp-json/wp/v2/pages",
+      "crud_role": "delete",
+      "path_params": [
+        "pageId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 186,
+      "line_end": 213
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/pages/{pageId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/pages/{pageId}",
+      "request_id": "/wp-json/wp/v2/pages/{pageId}",
+      "resource_key": "/wp-json/wp/v2/pages",
+      "collection_key": "/wp-json/wp/v2/pages",
+      "crud_role": "read_item",
+      "path_params": [
+        "pageId"
+      ],
+      "query_params": [
+        "_embed",
+        "_fields",
+        "context"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 109,
+      "line_end": 145
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/pages/{pageId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/pages/{pageId}",
+      "request_id": "/wp-json/wp/v2/pages/{pageId}",
+      "resource_key": "/wp-json/wp/v2/pages",
+      "collection_key": "/wp-json/wp/v2/pages",
+      "crud_role": "update_item",
+      "path_params": [
+        "pageId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 146,
+      "line_end": 185
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/posts",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/posts",
+      "request_id": "/wp-json/wp/v2/posts",
+      "resource_key": "/wp-json/wp/v2/posts",
+      "collection_key": "/wp-json/wp/v2/posts",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "_fields",
+        "categories",
+        "context",
+        "offset",
+        "order",
+        "orderby",
+        "page",
+        "per_page",
+        "search",
+        "slug",
+        "status",
+        "sticky",
+        "tags"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 214,
+      "line_end": 281
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/posts",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/posts",
+      "request_id": "/wp-json/wp/v2/posts",
+      "resource_key": "/wp-json/wp/v2/posts",
+      "collection_key": "/wp-json/wp/v2/posts",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 282,
+      "line_end": 322,
+      "semantic_parameters": [
+        {
+          "parameter": "status",
+          "location": "body",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/posts/{postId}",
+      "request_id": "/wp-json/wp/v2/posts/{postId}",
+      "resource_key": "/wp-json/wp/v2/posts",
+      "collection_key": "/wp-json/wp/v2/posts",
+      "crud_role": "delete",
+      "path_params": [
+        "postId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 400,
+      "line_end": 427
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/posts/{postId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/posts/{postId}",
+      "request_id": "/wp-json/wp/v2/posts/{postId}",
+      "resource_key": "/wp-json/wp/v2/posts",
+      "collection_key": "/wp-json/wp/v2/posts",
+      "crud_role": "read_item",
+      "path_params": [
+        "postId"
+      ],
+      "query_params": [
+        "_embed",
+        "_fields",
+        "context"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 323,
+      "line_end": 359
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/posts/{postId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/posts/{postId}",
+      "request_id": "/wp-json/wp/v2/posts/{postId}",
+      "resource_key": "/wp-json/wp/v2/posts",
+      "collection_key": "/wp-json/wp/v2/posts",
+      "crud_role": "update_item",
+      "path_params": [
+        "postId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 360,
+      "line_end": 399
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/search",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/search",
+      "request_id": "/wp-json/wp/v2/search",
+      "resource_key": "/wp-json/wp/v2/search",
+      "collection_key": "/wp-json/wp/v2/search",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "_fields",
+        "context",
+        "search",
+        "type"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 1399,
+      "line_end": 1438
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/settings",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/settings",
+      "request_id": "/wp-json/wp/v2/settings",
+      "resource_key": "/wp-json/wp/v2/settings",
+      "collection_key": "/wp-json/wp/v2/settings",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "context",
+        "slug"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 1221,
+      "line_end": 1255
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/settings",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/settings",
+      "request_id": "/wp-json/wp/v2/settings",
+      "resource_key": "/wp-json/wp/v2/settings",
+      "collection_key": "/wp-json/wp/v2/settings",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 1256,
+      "line_end": 1296
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/settings/{settingId}",
+      "request_id": "/wp-json/wp/v2/settings/{settingId}",
+      "resource_key": "/wp-json/wp/v2/settings",
+      "collection_key": "/wp-json/wp/v2/settings",
+      "crud_role": "delete",
+      "path_params": [
+        "settingId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 1371,
+      "line_end": 1398
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/settings/{settingId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/settings/{settingId}",
+      "request_id": "/wp-json/wp/v2/settings/{settingId}",
+      "resource_key": "/wp-json/wp/v2/settings",
+      "collection_key": "/wp-json/wp/v2/settings",
+      "crud_role": "read_item",
+      "path_params": [
+        "settingId"
+      ],
+      "query_params": [
+        "_embed",
+        "context"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 1297,
+      "line_end": 1330,
+      "semantic_parameters": [
+        {
+          "parameter": "id",
+          "location": "path",
+          "constraint_type": "required",
+          "confidence": 0.9
+        },
+        {
+          "parameter": "context",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        },
+        {
+          "parameter": "_embed",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/settings/{settingId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/settings/{settingId}",
+      "request_id": "/wp-json/wp/v2/settings/{settingId}",
+      "resource_key": "/wp-json/wp/v2/settings",
+      "collection_key": "/wp-json/wp/v2/settings",
+      "crud_role": "update_item",
+      "path_params": [
+        "settingId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 1331,
+      "line_end": 1370
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/tags",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/tags",
+      "request_id": "/wp-json/wp/v2/tags",
+      "resource_key": "/wp-json/wp/v2/tags",
+      "collection_key": "/wp-json/wp/v2/tags",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "context",
+        "offset",
+        "order",
+        "orderby",
+        "page",
+        "per_page",
+        "search",
+        "slug"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 633,
+      "line_end": 685,
+      "semantic_parameters": [
+        {
+          "parameter": "orderby",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/tags",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/tags",
+      "request_id": "/wp-json/wp/v2/tags",
+      "resource_key": "/wp-json/wp/v2/tags",
+      "collection_key": "/wp-json/wp/v2/tags",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 686,
+      "line_end": 726,
+      "semantic_parameters": [
+        {
+          "parameter": "name",
+          "location": "body",
+          "constraint_type": "required",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/tags/{tagId}",
+      "request_id": "/wp-json/wp/v2/tags/{tagId}",
+      "resource_key": "/wp-json/wp/v2/tags",
+      "collection_key": "/wp-json/wp/v2/tags",
+      "crud_role": "delete",
+      "path_params": [
+        "tagId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 801,
+      "line_end": 828
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/tags/{tagId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/tags/{tagId}",
+      "request_id": "/wp-json/wp/v2/tags/{tagId}",
+      "resource_key": "/wp-json/wp/v2/tags",
+      "collection_key": "/wp-json/wp/v2/tags",
+      "crud_role": "read_item",
+      "path_params": [
+        "tagId"
+      ],
+      "query_params": [
+        "_embed",
+        "context"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 727,
+      "line_end": 760
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/tags/{tagId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/tags/{tagId}",
+      "request_id": "/wp-json/wp/v2/tags/{tagId}",
+      "resource_key": "/wp-json/wp/v2/tags",
+      "collection_key": "/wp-json/wp/v2/tags",
+      "crud_role": "update_item",
+      "path_params": [
+        "tagId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 761,
+      "line_end": 800
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/users",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/users",
+      "request_id": "/wp-json/wp/v2/users",
+      "resource_key": "/wp-json/wp/v2/users",
+      "collection_key": "/wp-json/wp/v2/users",
+      "crud_role": "list",
+      "path_params": [],
+      "query_params": [
+        "_embed",
+        "context",
+        "offset",
+        "order",
+        "orderby",
+        "page",
+        "per_page",
+        "search",
+        "slug"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 1025,
+      "line_end": 1077,
+      "semantic_parameters": [
+        {
+          "parameter": "orderby",
+          "location": "query",
+          "constraint_type": "enum",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/users",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/users",
+      "request_id": "/wp-json/wp/v2/users",
+      "resource_key": "/wp-json/wp/v2/users",
+      "collection_key": "/wp-json/wp/v2/users",
+      "crud_role": "create",
+      "path_params": [],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "status",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 1078,
+      "line_end": 1118,
+      "semantic_parameters": [
+        {
+          "parameter": "username",
+          "location": "body",
+          "constraint_type": "required",
+          "confidence": 0.9
+        },
+        {
+          "parameter": "email",
+          "location": "body",
+          "constraint_type": "required",
+          "confidence": 0.9
+        },
+        {
+          "parameter": "password",
+          "location": "body",
+          "constraint_type": "required",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "operation_id": "DELETE /wp-json/wp/v2/users/{userId}",
+      "method": "DELETE",
+      "endpoint": "/wp-json/wp/v2/users/{userId}",
+      "request_id": "/wp-json/wp/v2/users/{userId}",
+      "resource_key": "/wp-json/wp/v2/users",
+      "collection_key": "/wp-json/wp/v2/users",
+      "crud_role": "delete",
+      "path_params": [
+        "userId"
+      ],
+      "query_params": [
+        "force"
+      ],
+      "body_params": [],
+      "header_params": [],
+      "auth_required": true,
+      "line_start": 1193,
+      "line_end": 1220,
+      "semantic_parameters": [
+        {
+          "parameter": "reassign",
+          "location": "query",
+          "constraint_type": "required",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "operation_id": "GET /wp-json/wp/v2/users/{userId}",
+      "method": "GET",
+      "endpoint": "/wp-json/wp/v2/users/{userId}",
+      "request_id": "/wp-json/wp/v2/users/{userId}",
+      "resource_key": "/wp-json/wp/v2/users",
+      "collection_key": "/wp-json/wp/v2/users",
+      "crud_role": "read_item",
+      "path_params": [
+        "userId"
+      ],
+      "query_params": [
+        "_embed",
+        "context"
+      ],
+      "body_params": [],
+      "header_params": [
+        "Accept-Language"
+      ],
+      "auth_required": true,
+      "line_start": 1119,
+      "line_end": 1152
+    },
+    {
+      "operation_id": "POST /wp-json/wp/v2/users/{userId}",
+      "method": "POST",
+      "endpoint": "/wp-json/wp/v2/users/{userId}",
+      "request_id": "/wp-json/wp/v2/users/{userId}",
+      "resource_key": "/wp-json/wp/v2/users",
+      "collection_key": "/wp-json/wp/v2/users",
+      "crud_role": "update_item",
+      "path_params": [
+        "userId"
+      ],
+      "query_params": [],
+      "body_params": [
+        "content",
+        "excerpt",
+        "title"
+      ],
+      "header_params": [
+        "Content-Type"
+      ],
+      "auth_required": true,
+      "line_start": 1153,
+      "line_end": 1192
+    }
+  ],
+  "edges": [
+    {
+      "source": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "target": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "target": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "target": "POST /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/users/{userId}",
+      "target": "GET /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "DELETE /wp-json/wp/v2/users/{userId}",
+      "target": "POST /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.75,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "POST /wp-json/wp/v2/categories",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories",
+      "target": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "target": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/comments/{commentId}",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/pages/{pageId}",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/posts/{postId}",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "POST /wp-json/wp/v2/settings",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "POST /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings",
+      "target": "POST /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/settings/{settingId}",
+      "target": "POST /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "feedback_resource_discovery",
+      "confidence": 0.85,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' can be satisfied from discovered ids."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/tags/{tagId}",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "DELETE /wp-json/wp/v2/users/{userId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "DELETE /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "GET /wp-json/wp/v2/users/{userId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "GET /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "POST /wp-json/wp/v2/users",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "POST /wp-json/wp/v2/users/{userId}",
+      "edge_type": "resource_discovery_consume",
+      "confidence": 0.72,
+      "directed": true,
+      "evidence": "Collection GET can discover ids consumed by item operations."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users",
+      "target": "POST /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "GET /wp-json/wp/v2/users/{userId}",
+      "target": "POST /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.8,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "GET /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories",
+      "target": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/categories/{categoryId}",
+      "target": "DELETE /wp-json/wp/v2/categories/{categoryId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "GET /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments",
+      "target": "POST /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/comments/{commentId}",
+      "target": "DELETE /wp-json/wp/v2/comments/{commentId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'status' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "GET /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages",
+      "target": "POST /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/pages/{pageId}",
+      "target": "DELETE /wp-json/wp/v2/pages/{pageId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'status' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "GET /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts",
+      "target": "POST /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/posts/{postId}",
+      "target": "DELETE /wp-json/wp/v2/posts/{postId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "GET /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "POST /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings",
+      "target": "POST /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/settings/{settingId}",
+      "target": "DELETE /wp-json/wp/v2/settings/{settingId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "GET /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "feedback_resource_id_dependency",
+      "confidence": 0.9,
+      "directed": true,
+      "evidence": "Feedback suggests parameter 'id' needs an existing resource id."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags",
+      "target": "POST /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/tags/{tagId}",
+      "target": "DELETE /wp-json/wp/v2/tags/{tagId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "DELETE /wp-json/wp/v2/users/{userId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "DELETE /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "DELETE /wp-json/wp/v2/users/{userId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "GET /wp-json/wp/v2/users/{userId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "GET /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "POST /wp-json/wp/v2/users/{userId}",
+      "edge_type": "resource_create_consume",
+      "confidence": 0.88,
+      "directed": true,
+      "evidence": "Collection POST can create ids consumed by item operations."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users",
+      "target": "POST /wp-json/wp/v2/users/{userId}",
+      "edge_type": "shared_auth_context",
+      "confidence": 0.55,
+      "directed": false,
+      "evidence": "Operations on the same resource share an authentication context."
+    },
+    {
+      "source": "POST /wp-json/wp/v2/users/{userId}",
+      "target": "DELETE /wp-json/wp/v2/users/{userId}",
+      "edge_type": "state_conflict_order",
+      "confidence": 0.68,
+      "directed": true,
+      "evidence": "Mutating operations should generally run before destructive deletes on the same resource."
+    }
+  ],
+  "weak_components": [
+    {
+      "component_id": "component_0",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/categories/{categoryId}",
+        "GET /wp-json/wp/v2/categories",
+        "GET /wp-json/wp/v2/categories/{categoryId}",
+        "POST /wp-json/wp/v2/categories",
+        "POST /wp-json/wp/v2/categories/{categoryId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 20,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/categories"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_1",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/comments/{commentId}",
+        "GET /wp-json/wp/v2/comments",
+        "GET /wp-json/wp/v2/comments/{commentId}",
+        "POST /wp-json/wp/v2/comments",
+        "POST /wp-json/wp/v2/comments/{commentId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 24,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/comments"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_2",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/pages/{pageId}",
+        "GET /wp-json/wp/v2/pages",
+        "GET /wp-json/wp/v2/pages/{pageId}",
+        "POST /wp-json/wp/v2/pages",
+        "POST /wp-json/wp/v2/pages/{pageId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 25,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/pages"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_3",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/posts/{postId}",
+        "GET /wp-json/wp/v2/posts",
+        "GET /wp-json/wp/v2/posts/{postId}",
+        "POST /wp-json/wp/v2/posts",
+        "POST /wp-json/wp/v2/posts/{postId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 25,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/posts"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_4",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/settings/{settingId}",
+        "GET /wp-json/wp/v2/settings",
+        "GET /wp-json/wp/v2/settings/{settingId}",
+        "POST /wp-json/wp/v2/settings",
+        "POST /wp-json/wp/v2/settings/{settingId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 22,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/settings"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_5",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/tags/{tagId}",
+        "GET /wp-json/wp/v2/tags",
+        "GET /wp-json/wp/v2/tags/{tagId}",
+        "POST /wp-json/wp/v2/tags",
+        "POST /wp-json/wp/v2/tags/{tagId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 24,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/tags"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_6",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/users/{userId}",
+        "GET /wp-json/wp/v2/users",
+        "GET /wp-json/wp/v2/users/{userId}",
+        "POST /wp-json/wp/v2/users",
+        "POST /wp-json/wp/v2/users/{userId}"
+      ],
+      "operation_count": 5,
+      "edge_count": 18,
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/users"
+      ],
+      "has_write_operation": true
+    },
+    {
+      "component_id": "component_7",
+      "operation_ids": [
+        "GET /wp-json/wp/v2/search"
+      ],
+      "operation_count": 1,
+      "edge_count": 0,
+      "methods": [
+        "GET"
+      ],
+      "resources": [
+        "/wp-json/wp/v2/search"
+      ],
+      "has_write_operation": false
+    }
+  ],
+  "task_packages": [
+    {
+      "task_id": "task_0",
+      "component_id": "component_2",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/pages/{pageId}",
+        "GET /wp-json/wp/v2/pages",
+        "GET /wp-json/wp/v2/pages/{pageId}",
+        "POST /wp-json/wp/v2/pages",
+        "POST /wp-json/wp/v2/pages/{pageId}"
+      ],
+      "operation_count": 5,
+      "priority": 3.25,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/pages"
+      ],
+      "edge_type_distribution": {
+        "feedback_resource_discovery": 3,
+        "feedback_resource_id_dependency": 4,
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/pages"
+        ]
+      }
+    },
+    {
+      "task_id": "task_1",
+      "component_id": "component_3",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/posts/{postId}",
+        "GET /wp-json/wp/v2/posts",
+        "GET /wp-json/wp/v2/posts/{postId}",
+        "POST /wp-json/wp/v2/posts",
+        "POST /wp-json/wp/v2/posts/{postId}"
+      ],
+      "operation_count": 5,
+      "priority": 3.25,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/posts"
+      ],
+      "edge_type_distribution": {
+        "feedback_resource_discovery": 3,
+        "feedback_resource_id_dependency": 4,
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/posts"
+        ]
+      }
+    },
+    {
+      "task_id": "task_2",
+      "component_id": "component_1",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/comments/{commentId}",
+        "GET /wp-json/wp/v2/comments",
+        "GET /wp-json/wp/v2/comments/{commentId}",
+        "POST /wp-json/wp/v2/comments",
+        "POST /wp-json/wp/v2/comments/{commentId}"
+      ],
+      "operation_count": 5,
+      "priority": 3.0,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/comments"
+      ],
+      "edge_type_distribution": {
+        "feedback_resource_discovery": 3,
+        "feedback_resource_id_dependency": 3,
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/comments"
+        ]
+      }
+    },
+    {
+      "task_id": "task_3",
+      "component_id": "component_5",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/tags/{tagId}",
+        "GET /wp-json/wp/v2/tags",
+        "GET /wp-json/wp/v2/tags/{tagId}",
+        "POST /wp-json/wp/v2/tags",
+        "POST /wp-json/wp/v2/tags/{tagId}"
+      ],
+      "operation_count": 5,
+      "priority": 3.0,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/tags"
+      ],
+      "edge_type_distribution": {
+        "feedback_resource_discovery": 3,
+        "feedback_resource_id_dependency": 3,
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/tags"
+        ]
+      }
+    },
+    {
+      "task_id": "task_4",
+      "component_id": "component_4",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/settings/{settingId}",
+        "GET /wp-json/wp/v2/settings",
+        "GET /wp-json/wp/v2/settings/{settingId}",
+        "POST /wp-json/wp/v2/settings",
+        "POST /wp-json/wp/v2/settings/{settingId}"
+      ],
+      "operation_count": 5,
+      "priority": 2.5,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/settings"
+      ],
+      "edge_type_distribution": {
+        "feedback_resource_discovery": 2,
+        "feedback_resource_id_dependency": 2,
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/settings"
+        ]
+      }
+    },
+    {
+      "task_id": "task_5",
+      "component_id": "component_0",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/categories/{categoryId}",
+        "GET /wp-json/wp/v2/categories",
+        "GET /wp-json/wp/v2/categories/{categoryId}",
+        "POST /wp-json/wp/v2/categories",
+        "POST /wp-json/wp/v2/categories/{categoryId}"
+      ],
+      "operation_count": 5,
+      "priority": 2.0,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/categories"
+      ],
+      "edge_type_distribution": {
+        "feedback_resource_discovery": 1,
+        "feedback_resource_id_dependency": 1,
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/categories"
+        ]
+      }
+    },
+    {
+      "task_id": "task_6",
+      "component_id": "component_6",
+      "operation_ids": [
+        "DELETE /wp-json/wp/v2/users/{userId}",
+        "GET /wp-json/wp/v2/users",
+        "GET /wp-json/wp/v2/users/{userId}",
+        "POST /wp-json/wp/v2/users",
+        "POST /wp-json/wp/v2/users/{userId}"
+      ],
+      "operation_count": 5,
+      "priority": 1.5,
+      "parallel_safe": true,
+      "shared_state_keys": [
+        "/wp-json/wp/v2/users"
+      ],
+      "edge_type_distribution": {
+        "resource_create_consume": 3,
+        "resource_discovery_consume": 3,
+        "shared_auth_context": 10,
+        "state_conflict_order": 2
+      },
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": [
+          "/wp-json/wp/v2/users"
+        ]
+      }
+    },
+    {
+      "task_id": "task_7",
+      "component_id": "component_7",
+      "operation_ids": [
+        "GET /wp-json/wp/v2/search"
+      ],
+      "operation_count": 1,
+      "priority": 0.1,
+      "parallel_safe": true,
+      "shared_state_keys": [],
+      "edge_type_distribution": {},
+      "worker_hints": {
+        "preserve_internal_restler_sequence": true,
+        "share_auth_token": true,
+        "share_resource_pool_keys": []
+      }
+    }
+  ]
+}

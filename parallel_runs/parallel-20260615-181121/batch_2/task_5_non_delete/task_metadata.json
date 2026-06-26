@@ -1,0 +1,128 @@
+{
+  "task_package": {
+    "task_id": "task_5_non_delete",
+    "component_id": "component_0",
+    "operation_ids": [
+      "GET /wp-json/wp/v2/categories",
+      "GET /wp-json/wp/v2/categories/{categoryId}",
+      "POST /wp-json/wp/v2/categories",
+      "POST /wp-json/wp/v2/categories/{categoryId}"
+    ],
+    "operation_count": 4,
+    "priority": 1.75,
+    "parallel_safe": true,
+    "shared_state_keys": [
+      "/wp-json/wp/v2/categories"
+    ],
+    "edge_type_distribution": {
+      "resource_create_consume": 3,
+      "resource_discovery_consume": 3,
+      "shared_auth_context": 10,
+      "state_conflict_order": 2
+    },
+    "worker_hints": {
+      "preserve_internal_restler_sequence": true,
+      "share_auth_token": true,
+      "share_resource_pool_keys": [
+        "/wp-json/wp/v2/categories"
+      ]
+    },
+    "split_reason": "defer_delete_operations"
+  },
+  "grammar_summary": {
+    "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+    "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-181121\\batch_2\\task_5_non_delete\\grammar.py",
+    "requested_operation_count": 4,
+    "written_operation_count": 4,
+    "missing_operation_ids": []
+  },
+  "grammar_patch_summary": {
+    "enabled": true,
+    "patched": true,
+    "body_fields_added": [
+      {
+        "operation_id": "POST /wp-json/wp/v2/categories",
+        "field": "name",
+        "payload": "name"
+      }
+    ],
+    "query_fields_added": [],
+    "query_primitives_replaced": [
+      {
+        "operation_id": "GET /wp-json/wp/v2/categories",
+        "field": "orderby",
+        "payload": "orderby"
+      }
+    ],
+    "path_primitives_replaced": [
+      {
+        "operation_id": "GET /wp-json/wp/v2/categories/{categoryId}",
+        "parameter": "categoryId"
+      },
+      {
+        "operation_id": "POST /wp-json/wp/v2/categories/{categoryId}",
+        "parameter": "categoryId"
+      }
+    ]
+  },
+  "dictionary_seed_summary": {
+    "semantic_feedback": {
+      "base_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-181121\\batch_2\\task_5_non_delete\\dict.json",
+      "output_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-181121\\batch_2\\task_5_non_delete\\dict.json",
+      "semantic_constraint_count": 6,
+      "resource_pool_count": 0,
+      "operation_scope": [
+        "GET /wp-json/wp/v2/categories",
+        "GET /wp-json/wp/v2/categories/{categoryId}",
+        "POST /wp-json/wp/v2/categories",
+        "POST /wp-json/wp/v2/categories/{categoryId}"
+      ],
+      "resource_scope": [
+        "/wp-json/wp/v2/categories"
+      ],
+      "seeded_parameters": {
+        "orderby": [
+          "id",
+          "count",
+          "description",
+          "name",
+          "slug",
+          "taxonomy",
+          "parent",
+          "thumbnail",
+          "meta"
+        ],
+        "name": [
+          "restler-name-1781518290"
+        ]
+      },
+      "seeded_resource_values": {},
+      "wordpress_defaults_enabled": true,
+      "prune_endpoint_query_payloads": false,
+      "include_endpoint_query_semantics": true,
+      "enabled": true,
+      "semantic_constraint_paths": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round0\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round1\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round2\\semantic_constraints.jsonl"
+      ],
+      "seeded_parameter_count": 2
+    },
+    "resource_pool": {
+      "enabled": true,
+      "seeded_value_count": 1,
+      "resource_keys": [
+        "/wp-json/wp/v2/categories"
+      ],
+      "parameter_names": [
+        "categories",
+        "categoryId",
+        "id",
+        "parent"
+      ],
+      "numeric_value_count": 1
+    }
+  },
+  "dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-181121\\batch_2\\task_5_non_delete\\dict.json",
+  "settings_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+}

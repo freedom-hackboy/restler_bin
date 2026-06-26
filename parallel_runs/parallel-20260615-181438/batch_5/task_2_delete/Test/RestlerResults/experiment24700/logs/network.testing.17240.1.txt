@@ -1,0 +1,31 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 8)
+	Request hash: 3d6f627cc480fdbde8db8b962d89d10f1ce5b7d7
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'comments'
+		- restler_static_string: '/'
+		+ restler_custom_payload: [14, 15, ...]
+		- restler_static_string: '?'
+		- restler_static_string: 'force='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2026-06-15 18:15:01.344: Sending: 'DELETE /wp-json/wp/v2/comments/14?force=true HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\n_OMITTED_AUTH_TOKEN_\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 54a18a44-c283-479b-95b9-c0ac1cf40654\r\n\r\n'
+
+2026-06-15 18:15:01.388: Received: 'HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:15:10 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel="https://api.w.org/"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 935\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{"deleted":true,"previous":{"id":14,"post":90,"parent":0,"author":0,"author_name":"restler","author_email":"restler_comment_20260615181428@example.com","author_url":"","author_ip":"192.168.65.1","author_user_agent":"restler\\/9.3.1","date":"2026-06-15T18:14:38","date_gmt":"2026-06-15T10:14:38","content":{"rendered":"<p>fuzzstring<\\/p>\\n","raw":"fuzzstring"},"link":"http:\\/\\/192.168.65.128:8088\\/2026\\/06\\/15\\/restler-bootstrap-comment-host-20260615181428\\/#comment-14","status":"hold","type":"comment","author_avatar_urls":{"24":"https:\\/\\/secure.gravatar.com\\/avatar\\/2b77da688fdd53f6d711bcb360191395e30ef837c251729437a78afdd5d007c6?s=24&d=mm&r=g","48":"https:\\/\\/secure.gravatar.com\\/avatar\\/2b77da688fdd53f6d711bcb360191395e30ef837c251729437a78afdd5d007c6?s=48&d=mm&r=g","96":"https:\\/\\/secure.gravatar.com\\/avatar\\/2b77da688fdd53f6d711bcb360191395e30ef837c251729437a78afdd5d007c6?s=96&d=mm&r=g"},"meta":{"_wp_note_status":null}}}'
+

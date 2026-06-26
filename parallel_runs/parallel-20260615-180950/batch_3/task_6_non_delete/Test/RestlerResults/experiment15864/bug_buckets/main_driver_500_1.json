@@ -1,0 +1,16 @@
+{
+    "status_code": "500",
+    "checker_name": "main_driver",
+    "reproducible": true,
+    "verb": "POST",
+    "endpoint": "/wp-json/wp/v2/users",
+    "status_text": "Internal Server Error",
+    "request_sequence": [
+        {
+            "producer_timing_delay": 0,
+            "max_async_wait_time": 0,
+            "replay_request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":\"StrongPass123!\"}\r\n",
+            "response": "HTTP/1.1 500 Internal Server Error\r\nDate: Mon, 15 Jun 2026 10:10:15 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 115\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"existing_user_login\",\"message\":\"\\u62b1\\u6b49\\uff0c\\u7528\\u6237\\u540d\\u5df2\\u5b58\\u5728\\uff01\",\"data\":null}"
+        }
+    ]
+}

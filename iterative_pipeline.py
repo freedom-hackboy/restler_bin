@@ -11,6 +11,8 @@ import time
 from typing import Any, Dict, List, Optional
 
 from knowledge_manager import KnowledgeManager
+from operation_dependency_graph import OperationDependencyGraphBuilder
+from parallel_task_scheduler import ParallelTaskScheduler
 
 
 SUPPORTED_MODES = {"test", "fuzz", "fuzz-lean"}
@@ -50,6 +52,15 @@ class IterativePipeline:
         disable_llm_extraction: bool = False,
         llm_timeout_sec: Optional[float] = None,
         target_coverage_file: Optional[str] = None,
+        dependency_graph_min_confidence: float = 0.60,
+        run_parallel_workers: bool = False,
+        max_parallel_workers: int = 2,
+        parallel_output_dir: str = "parallel_runs",
+        parallel_task_timeout_sec: Optional[int] = None,
+        parallel_limit_tasks: Optional[int] = None,
+        parallel_prepare_only: bool = False,
+        parallel_resource_pool_path: Optional[str] = None,
+        seed_parallel_workers_from_resource_pool: bool = True,
     ):
         self.rounds = rounds
         self.project_root = os.path.abspath(project_root)
@@ -76,6 +87,19 @@ class IterativePipeline:
         self.disable_llm_extraction = disable_llm_extraction
         self.llm_timeout_sec = llm_timeout_sec
         self.target_coverage_file = self._resolve_optional_path(target_coverage_file)
+        self.dependency_graph_min_confidence = dependency_graph_min_confidence
+        self.run_parallel_workers = run_parallel_workers
+        self.max_parallel_workers = max(1, int(max_parallel_workers))
+        self.parallel_output_dir = self._resolve_path(parallel_output_dir)
+        self.parallel_task_timeout_sec = parallel_task_timeout_sec
+        self.parallel_limit_tasks = parallel_limit_tasks
+        self.parallel_prepare_only = parallel_prepare_only
+        self.parallel_resource_pool_path = (
+            self._resolve_optional_path(parallel_resource_pool_path)
+            if parallel_resource_pool_path
+            else os.path.join(self.rounds_dir if hasattr(self, "rounds_dir") else self._resolve_path("rounds"), "resource_pool.json")
+        )
+        self.seed_parallel_workers_from_resource_pool = seed_parallel_workers_from_resource_pool
         self.knowledge_manager = KnowledgeManager(
             belief_threshold_high=belief_threshold_high,
             belief_threshold_low=belief_threshold_low,
@@ -139,6 +163,8 @@ class IterativePipeline:
                 round_experiment_metrics = os.path.join(round_dir, "experiment_metrics.json")
                 round_stats = os.path.join(round_dir, "stats.json")
                 round_adaptive_stats = os.path.join(round_dir, "adaptive_stats.json")
+                round_dependency_graph = os.path.join(round_dir, "dependency_graph.json")
+                round_task_plan = os.path.join(round_dir, "task_plan.json")
                 next_dict = os.path.join(self.dict_dir, f"dict_round{round_id + 1}.json")
                 next_grammar = os.path.join(self.grammar_dir, f"grammar_round{round_id + 1}.py")
 
@@ -196,6 +222,34 @@ class IterativePipeline:
                     dict_path=next_dict,
                     output_grammar_path=next_grammar,
                 )
+                self._write_pipeline_state(round_id, "dependency_graph", "running")
+                dependency_graph_summary = self._run_dependency_graph_builder(
+                    grammar_path=next_grammar,
+                    constraints_path=round_constraints,
+                    applied_constraints_path=round_applied_constraints,
+                    output_graph_path=round_dependency_graph,
+                    output_task_plan_path=round_task_plan,
+                )
+                parallel_summary: Optional[Dict[str, Any]] = None
+                if self.run_parallel_workers:
+                    self._write_pipeline_state(round_id, "parallel_workers", "running")
+                    parallel_summary = self._run_parallel_task_scheduler(
+                        task_plan_path=round_task_plan,
+                        grammar_path=next_grammar,
+                        dict_path=next_dict,
+                    )
+                    if parallel_summary and not self.parallel_prepare_only:
+                        self._write_pipeline_state(round_id, "parallel_feedback", "running")
+                        self._apply_parallel_resource_pool_to_dict(
+                            dict_path=next_dict,
+                            task_plan_path=round_task_plan,
+                            parallel_summary=parallel_summary,
+                        )
+                        self._run_grammar_updater(
+                            base_grammar_path=self.base_grammar_file,
+                            dict_path=next_dict,
+                            output_grammar_path=next_grammar,
+                        )
 
                 self._write_pipeline_state(round_id, "collect_stats", "running")
                 adaptive_stats = self._collect_adaptive_stats(
@@ -220,6 +274,10 @@ class IterativePipeline:
                     adaptive_stats=adaptive_stats,
                     testing_summary_path=round_testing_summary,
                     experiment_metrics=experiment_metrics,
+                    dependency_graph_path=round_dependency_graph,
+                    task_plan_path=round_task_plan,
+                    dependency_graph_summary=dependency_graph_summary,
+                    parallel_summary=parallel_summary,
                 )
                 next_state = self._select_next_round_state(
                     success_summary=success_summary,
@@ -364,6 +422,149 @@ class IterativePipeline:
             output_grammar_path,
         ]
         self._run_cmd(cmd, step_name="Grammar Update", timeout_sec=self.grammar_timeout_sec)
+
+    def _run_dependency_graph_builder(
+        self,
+        grammar_path: str,
+        constraints_path: str,
+        applied_constraints_path: str,
+        output_graph_path: str,
+        output_task_plan_path: str,
+    ) -> Dict[str, Any]:
+        print("\n[Pipeline] ===== Operation Dependency Graph =====")
+        builder = OperationDependencyGraphBuilder(
+            grammar_path=grammar_path,
+            constraints_path=constraints_path,
+            applied_constraints_path=applied_constraints_path,
+            min_confidence=self.dependency_graph_min_confidence,
+        )
+        graph = builder.write(output_graph_path, output_task_plan_path)
+        summary = graph.get("summary", {})
+        print(
+            "[Pipeline] dependency graph saved: "
+            f"{output_graph_path} "
+            f"(operations={summary.get('operation_count', 0)}, "
+            f"edges={summary.get('edge_count', 0)}, "
+            f"components={summary.get('component_count', 0)})"
+        )
+        print(f"[Pipeline] task plan saved: {output_task_plan_path}")
+        return summary
+
+    def _run_parallel_task_scheduler(
+        self,
+        task_plan_path: str,
+        grammar_path: str,
+        dict_path: str,
+    ) -> Dict[str, Any]:
+        print("\n[Pipeline] ===== Parallel Task Scheduler =====")
+        scheduler = ParallelTaskScheduler(
+            project_root=self.project_root,
+            task_plan_path=task_plan_path,
+            grammar_path=grammar_path,
+            dict_path=dict_path,
+            settings_path=self.settings_file,
+            output_dir=self.parallel_output_dir,
+            restler_mode=self.restler_mode,
+            max_workers=self.max_parallel_workers,
+            no_ssl=self.no_ssl,
+            time_budget=self.fuzz_time_budget,
+            search_strategy=self.search_strategy,
+            host=self.host,
+            target_ip=self.target_ip,
+            target_port=self.target_port,
+            task_timeout_sec=self.parallel_task_timeout_sec,
+            limit_tasks=self.parallel_limit_tasks,
+            prepare_only=self.parallel_prepare_only,
+            resource_pool_path=self.parallel_resource_pool_path,
+            seed_workers_from_resource_pool=self.seed_parallel_workers_from_resource_pool,
+        )
+        summary = scheduler.run()
+        print(
+            "[Pipeline] parallel workers finished: "
+            f"{summary.get('completed_task_count', 0)}/{summary.get('task_count', 0)} completed, "
+            f"run_dir={summary.get('run_dir')}"
+        )
+        return {
+            "run_dir": summary.get("run_dir"),
+            "task_count": summary.get("task_count", 0),
+            "completed_task_count": summary.get("completed_task_count", 0),
+            "failed_task_count": summary.get("failed_task_count", 0),
+            "aggregate": summary.get("aggregate", {}),
+            "resource_pool": summary.get("resource_pool", {}),
+        }
+
+    def _apply_parallel_resource_pool_to_dict(
+        self,
+        dict_path: str,
+        task_plan_path: str,
+        parallel_summary: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        resource_pool = parallel_summary.get("resource_pool", {})
+        resources = resource_pool.get("resources", {}) if isinstance(resource_pool, dict) else {}
+        if not isinstance(resources, dict) or not resources:
+            return {"applied": False, "seeded_value_count": 0}
+
+        dictionary = self._load_json(dict_path)
+        for key, default in [
+            ("restler_fuzzable_int", []),
+            ("restler_fuzzable_string", []),
+            ("restler_fuzzable_string_unquoted", []),
+            ("restler_custom_payload", {}),
+            ("restler_custom_payload_unquoted", {}),
+            ("restler_custom_payload_query", {}),
+            ("restler_custom_payload_query_unquoted", {}),
+        ]:
+            if key not in dictionary or not isinstance(dictionary[key], type(default)):
+                dictionary[key] = default.copy() if isinstance(default, dict) else list(default)
+
+        task_plan = self._load_json(task_plan_path) if os.path.exists(task_plan_path) else {}
+        path_param_names = self._extract_path_param_names_from_task_plan(task_plan)
+        candidate_values: List[Any] = []
+        for entry in resources.values():
+            if isinstance(entry, dict) and isinstance(entry.get("ids"), list):
+                candidate_values.extend(entry["ids"])
+
+        candidate_values = self._dedupe_values(candidate_values)
+        if not candidate_values:
+            return {"applied": False, "seeded_value_count": 0}
+
+        numeric_values = [str(int(value)) for value in candidate_values if self._looks_like_int(value)]
+        string_values = [str(value) for value in candidate_values]
+        self._extend_list(dictionary["restler_fuzzable_int"], numeric_values)
+        self._extend_list(dictionary["restler_fuzzable_string"], string_values)
+        self._extend_list(dictionary["restler_fuzzable_string_unquoted"], string_values)
+
+        for parameter in path_param_names:
+            for key in [
+                "restler_custom_payload",
+                "restler_custom_payload_unquoted",
+                "restler_custom_payload_query",
+                "restler_custom_payload_query_unquoted",
+            ]:
+                dictionary[key].setdefault(parameter, [])
+                self._extend_list(dictionary[key][parameter], string_values)
+
+        self._save_json(dict_path, dictionary)
+        summary = {
+            "applied": True,
+            "seeded_value_count": len(candidate_values),
+            "numeric_value_count": len(numeric_values),
+            "parameter_names": path_param_names,
+            "resource_count": len(resources),
+        }
+        print(
+            "[Pipeline] applied parallel resource pool to dict: "
+            f"values={summary['seeded_value_count']}, parameters={len(path_param_names)}"
+        )
+        return summary
+
+    def _extract_path_param_names_from_task_plan(self, task_plan: Dict[str, Any]) -> List[str]:
+        names = set()
+        for task in task_plan.get("task_packages", []):
+            for operation_id in task.get("operation_ids", []):
+                for name in re.findall(r"\{([^{}]+)\}", str(operation_id)):
+                    names.add(name)
+        return sorted(names)
 
     def _reset_target_if_configured(self, round_id: int) -> None:
         if not self.target_reset_cmd:
@@ -538,6 +739,10 @@ class IterativePipeline:
         adaptive_stats: Dict[str, Any],
         testing_summary_path: str,
         experiment_metrics: Dict[str, Any],
+        dependency_graph_path: str,
+        task_plan_path: str,
+        dependency_graph_summary: Dict[str, Any],
+        parallel_summary: Optional[Dict[str, Any]],
     ) -> Dict[str, Any]:
         return {
             "round_id": round_id,
@@ -557,6 +762,10 @@ class IterativePipeline:
             "status_distribution": self._count_status_distribution(error_summary_path),
             "constraint_type_distribution": self._count_constraint_type_distribution(constraints_path),
             "experiment_metrics": experiment_metrics,
+            "dependency_graph_path": dependency_graph_path,
+            "task_plan_path": task_plan_path,
+            "dependency_graph_summary": dependency_graph_summary,
+            "parallel_summary": parallel_summary,
             "adaptive_summary": adaptive_stats,
         }
 
@@ -1315,6 +1524,33 @@ class IterativePipeline:
                     continue
         return results
 
+    def _dedupe_values(self, values: Any) -> List[Any]:
+        if not isinstance(values, list):
+            return []
+        seen = set()
+        result: List[Any] = []
+        for value in values:
+            normalized = str(value)
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+            if self._looks_like_int(value):
+                result.append(int(value))
+            else:
+                result.append(str(value))
+        return sorted(result, key=lambda item: (len(str(item)), str(item)))
+
+    def _extend_list(self, target: List[Any], values: List[Any]) -> None:
+        existing = {str(item) for item in target}
+        for value in values:
+            if str(value) in existing:
+                continue
+            target.append(value)
+            existing.add(str(value))
+
+    def _looks_like_int(self, value: Any) -> bool:
+        return re.fullmatch(r"-?\d+", str(value)) is not None
+
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run iterative RESTler rounds in test, fuzz, or fuzz-lean mode.")
@@ -1389,6 +1625,55 @@ def build_arg_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional target-side coverage summary file used to collect LOCs for each run.",
     )
+    parser.add_argument(
+        "--dependency_graph_min_confidence",
+        type=float,
+        default=0.60,
+        help="Minimum semantic feedback confidence used when building implicit dependency graph edges.",
+    )
+    parser.add_argument(
+        "--run_parallel_workers",
+        action="store_true",
+        help="After each dependency graph is built, run task packages with parallel RESTler workers.",
+    )
+    parser.add_argument(
+        "--max_parallel_workers",
+        type=int,
+        default=2,
+        help="Maximum RESTler worker processes used by --run_parallel_workers.",
+    )
+    parser.add_argument(
+        "--parallel_output_dir",
+        default="parallel_runs",
+        help="Directory for parallel worker artifacts.",
+    )
+    parser.add_argument(
+        "--parallel_task_timeout_sec",
+        type=int,
+        default=None,
+        help="Per-worker timeout used by --run_parallel_workers.",
+    )
+    parser.add_argument(
+        "--parallel_limit_tasks",
+        type=int,
+        default=None,
+        help="Run only the first N task packages by priority when --run_parallel_workers is enabled.",
+    )
+    parser.add_argument(
+        "--parallel_prepare_only",
+        action="store_true",
+        help="Prepare worker directories and task grammars without launching RESTler workers.",
+    )
+    parser.add_argument(
+        "--parallel_resource_pool",
+        default=None,
+        help="Shared resource_pool.json used to seed parallel workers and persist discovered ids.",
+    )
+    parser.add_argument(
+        "--disable_parallel_resource_pool_seed",
+        action="store_true",
+        help="Do not inject shared resource ids into parallel worker dictionaries.",
+    )
     return parser
 
 
@@ -1423,6 +1708,15 @@ def main():
         disable_llm_extraction=args.disable_llm_extraction,
         llm_timeout_sec=args.llm_timeout_sec,
         target_coverage_file=args.target_coverage_file,
+        dependency_graph_min_confidence=args.dependency_graph_min_confidence,
+        run_parallel_workers=args.run_parallel_workers,
+        max_parallel_workers=args.max_parallel_workers,
+        parallel_output_dir=args.parallel_output_dir,
+        parallel_task_timeout_sec=args.parallel_task_timeout_sec,
+        parallel_limit_tasks=args.parallel_limit_tasks,
+        parallel_prepare_only=args.parallel_prepare_only,
+        parallel_resource_pool_path=args.parallel_resource_pool,
+        seed_parallel_workers_from_resource_pool=not args.disable_parallel_resource_pool_seed,
     )
     pipeline.run()
 

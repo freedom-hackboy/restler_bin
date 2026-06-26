@@ -1,0 +1,79 @@
+Random seed: 12345
+Grammar schema file 'C:\Users\RLJ\Desktop\study\restler_bin\parallel_runs\parallel-20260615-155820\batch_3\task_6\grammar.json' does not exist.
+Setting fuzzing schemes: directed-smoke-test
+2026-06-15 15:59:29.540: Going to fuzz a set with 5 requests
+2026-06-15 15:59:29.540: Request-0: Value Combinations: 12
+2026-06-15 15:59:29.540: Request-1: Value Combinations: 8
+2026-06-15 15:59:29.540: Request-2: Value Combinations: 20
+2026-06-15 15:59:29.540: Request-3: Value Combinations: 2
+2026-06-15 15:59:29.540: Request-4: Value Combinations: 2
+2026-06-15 15:59:29.540: Avg. Value Combinations per Request: 8.8
+2026-06-15 15:59:29.540: Median Value Combinations per Request: 8
+2026-06-15 15:59:29.540: Min Value Combinations per Request: 2
+2026-06-15 15:59:29.540: Max Value Combinations per Request: 20
+2026-06-15 15:59:29.540: Total dependencies: 0
+
+2026-06-15 15:59:29.551: Generation: 1 / Sequences Collection Size: 5 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2026-06-15 15:59:38.419: Request 0
+2026-06-15 15:59:38.419: Endpoint - /wp-json/wp/v2/users/{userId}
+2026-06-15 15:59:38.419: Hex Def - 081ee5aa59c374abcba77e49f15d4f19374e2941
+2026-06-15 15:59:38.419: Sequence length that satisfies dependencies: 1
+2026-06-15 15:59:38.420: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'wp-json'
+		- restler_static_string: '/'
+		- restler_static_string: 'wp'
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'users'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'context='
+		+ restler_fuzzable_group: ['view', 'embed', 'edit']
+		- restler_static_string: '&'
+		- restler_static_string: '_embed='
+		+ restler_fuzzable_string: ['author,wp:term', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: 192.168.65.128:8088\r\n'
+		- restler_static_string: 'Accept-Language: '
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval', 'token_module_file', 'token_module_function', 'token_module_data']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+Timed out...
+2026-06-15 15:59:47.556: Generation: 1 / Sequences Collection Size: 5 
+(After directed-smoke-test Render)
+
+2026-06-15 15:59:47.557: Final Swagger spec coverage: 1 / 5
+2026-06-15 15:59:47.557: Rendered requests: 2 / 5
+2026-06-15 15:59:47.557: Rendered requests with "valid" status codes: 1 / 2
+2026-06-15 15:59:47.557: Num fully valid requests (no resource creation failures): 1
+2026-06-15 15:59:47.557: Num requests not rendered due to invalid sequence re-renders: 0
+2026-06-15 15:59:47.557: Num invalid requests caused by failed resource creations: 0
+2026-06-15 15:59:47.557: Total Creations of Dyn Objects: 0
+2026-06-15 15:59:47.557: Total Requests Sent: {'gc': 0, 'main_driver': 2, 'LeakageRuleChecker': 0, 'ResourceHierarchyChecker': 0, 'UseAfterFreeChecker': 0, 'InvalidDynamicObjectChecker': 0, 'PayloadBodyChecker': 0, 'ExamplesChecker': 0, 'InvalidValueChecker': 0}
+2026-06-15 15:59:47.557: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2026-06-15 15:59:47.566: Final Swagger spec coverage: 1 / 5
+2026-06-15 15:59:47.566: Rendered requests: 2 / 5
+2026-06-15 15:59:47.566: Rendered requests with "valid" status codes: 1 / 2
+2026-06-15 15:59:47.566: Num fully valid requests (no resource creation failures): 1
+2026-06-15 15:59:47.566: Num requests not rendered due to invalid sequence re-renders: 0
+2026-06-15 15:59:47.566: Num invalid requests caused by failed resource creations: 0
+2026-06-15 15:59:47.566: Total Creations of Dyn Objects: 0
+2026-06-15 15:59:47.566: Total Requests Sent: {'gc': 0, 'main_driver': 2, 'LeakageRuleChecker': 0, 'ResourceHierarchyChecker': 0, 'UseAfterFreeChecker': 0, 'InvalidDynamicObjectChecker': 0, 'PayloadBodyChecker': 0, 'ExamplesChecker': 0, 'InvalidValueChecker': 0}
+2026-06-15 15:59:47.566: Bug Buckets: {}

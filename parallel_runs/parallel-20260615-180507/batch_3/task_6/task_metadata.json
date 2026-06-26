@@ -1,0 +1,153 @@
+{
+  "task_package": {
+    "task_id": "task_6",
+    "component_id": "component_6",
+    "operation_ids": [
+      "DELETE /wp-json/wp/v2/users/{userId}",
+      "GET /wp-json/wp/v2/users",
+      "GET /wp-json/wp/v2/users/{userId}",
+      "POST /wp-json/wp/v2/users",
+      "POST /wp-json/wp/v2/users/{userId}"
+    ],
+    "operation_count": 5,
+    "priority": 1.5,
+    "parallel_safe": true,
+    "shared_state_keys": [
+      "/wp-json/wp/v2/users"
+    ],
+    "edge_type_distribution": {
+      "resource_create_consume": 3,
+      "resource_discovery_consume": 3,
+      "shared_auth_context": 10,
+      "state_conflict_order": 2
+    },
+    "worker_hints": {
+      "preserve_internal_restler_sequence": true,
+      "share_auth_token": true,
+      "share_resource_pool_keys": [
+        "/wp-json/wp/v2/users"
+      ]
+    }
+  },
+  "grammar_summary": {
+    "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+    "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-180507\\batch_3\\task_6\\grammar.py",
+    "requested_operation_count": 5,
+    "written_operation_count": 5,
+    "missing_operation_ids": []
+  },
+  "grammar_patch_summary": {
+    "enabled": true,
+    "patched": true,
+    "body_fields_added": [
+      {
+        "operation_id": "POST /wp-json/wp/v2/users",
+        "field": "username",
+        "payload": "username"
+      },
+      {
+        "operation_id": "POST /wp-json/wp/v2/users",
+        "field": "email",
+        "payload": "email"
+      },
+      {
+        "operation_id": "POST /wp-json/wp/v2/users",
+        "field": "password",
+        "payload": "password"
+      }
+    ],
+    "query_fields_added": [
+      {
+        "operation_id": "DELETE /wp-json/wp/v2/users/{userId}",
+        "field": "reassign",
+        "payload": "reassign"
+      }
+    ],
+    "query_primitives_replaced": [
+      {
+        "operation_id": "GET /wp-json/wp/v2/users",
+        "field": "orderby",
+        "payload": "orderby"
+      }
+    ],
+    "path_primitives_replaced": [
+      {
+        "operation_id": "GET /wp-json/wp/v2/users/{userId}",
+        "parameter": "userId"
+      },
+      {
+        "operation_id": "POST /wp-json/wp/v2/users/{userId}",
+        "parameter": "userId"
+      },
+      {
+        "operation_id": "DELETE /wp-json/wp/v2/users/{userId}",
+        "parameter": "userId"
+      }
+    ]
+  },
+  "dictionary_seed_summary": {
+    "semantic_feedback": {
+      "base_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-180507\\batch_3\\task_6\\dict.json",
+      "output_dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-180507\\batch_3\\task_6\\dict.json",
+      "semantic_constraint_count": 14,
+      "resource_pool_count": 0,
+      "operation_scope": [
+        "DELETE /wp-json/wp/v2/users/{userId}",
+        "GET /wp-json/wp/v2/users",
+        "GET /wp-json/wp/v2/users/{userId}",
+        "POST /wp-json/wp/v2/users",
+        "POST /wp-json/wp/v2/users/{userId}"
+      ],
+      "resource_scope": [
+        "/wp-json/wp/v2/users"
+      ],
+      "seeded_parameters": {
+        "username": [
+          "restler_user"
+        ],
+        "email": [
+          "restler_user@example.com"
+        ],
+        "password": [
+          "StrongPass123!"
+        ],
+        "reassign": [
+          "1"
+        ],
+        "orderby": [
+          "author",
+          "date",
+          "title",
+          "id"
+        ]
+      },
+      "seeded_resource_values": {},
+      "wordpress_defaults_enabled": true,
+      "prune_endpoint_query_payloads": false,
+      "include_endpoint_query_semantics": true,
+      "enabled": true,
+      "semantic_constraint_paths": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round0\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round1\\semantic_constraints.jsonl",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\rounds\\round2\\semantic_constraints.jsonl"
+      ],
+      "seeded_parameter_count": 5
+    },
+    "resource_pool": {
+      "enabled": true,
+      "seeded_value_count": 1,
+      "resource_keys": [
+        "/wp-json/wp/v2/users"
+      ],
+      "parameter_names": [
+        "author",
+        "id",
+        "reassign",
+        "userId"
+      ],
+      "numeric_value_count": 1
+    }
+  },
+  "dict_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-180507\\batch_3\\task_6\\dict.json",
+  "settings_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+}

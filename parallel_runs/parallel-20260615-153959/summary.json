@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "run_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959",
+  "started_at": "2026-06-15 15:39:59",
+  "finished_at": "2026-06-15 15:40:25",
+  "duration_sec": 26.631,
+  "restler_mode": "test",
+  "max_workers": 2,
+  "task_count": 8,
+  "completed_task_count": 8,
+  "failed_task_count": 0,
+  "aggregate": {
+    "endpoint_total_sum": 36,
+    "valid_endpoint_count_sum": 13,
+    "error_summary_count_sum": 28,
+    "bug_bucket_count_sum": 0
+  },
+  "results": [
+    {
+      "task_id": "task_0",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:39:59",
+      "finished_at": "2026-06-15 15:40:06",
+      "duration_sec": 7.358,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_0",
+        "component_id": "component_2",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/pages/{pageId}",
+          "GET /wp-json/wp/v2/pages",
+          "GET /wp-json/wp/v2/pages/{pageId}",
+          "POST /wp-json/wp/v2/pages",
+          "POST /wp-json/wp/v2/pages/{pageId}"
+        ],
+        "operation_count": 5,
+        "priority": 3.0,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/pages"
+        ],
+        "edge_type_distribution": {
+          "feedback_resource_discovery": 3,
+          "feedback_resource_id_dependency": 3,
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/pages"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 1,
+        "resource_keys": [
+          "/wp-json/wp/v2/pages"
+        ],
+        "parameter_names": [
+          "pageId"
+        ],
+        "numeric_value_count": 1
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test\\RestlerResults\\experiment25056\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test\\RestlerResults\\experiment25056\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test\\RestlerResults\\experiment25056\\logs\\network.auth.24044.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test\\RestlerResults\\experiment25056\\logs\\network.gc.3860.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_0\\Test\\RestlerResults\\experiment25056\\logs\\network.testing.24044.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "2 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "2 / 5",
+          "num_fully_valid": 2,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 63
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 2,
+          "invalid_endpoint_count": 3
+        },
+        "error_summary_count": 4,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": [
+          16,
+          18
+        ]
+      }
+    },
+    {
+      "task_id": "task_1",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:39:59",
+      "finished_at": "2026-06-15 15:40:05",
+      "duration_sec": 5.852,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_1",
+        "component_id": "component_5",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/tags/{tagId}",
+          "GET /wp-json/wp/v2/tags",
+          "GET /wp-json/wp/v2/tags/{tagId}",
+          "POST /wp-json/wp/v2/tags",
+          "POST /wp-json/wp/v2/tags/{tagId}"
+        ],
+        "operation_count": 5,
+        "priority": 3.0,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/tags"
+        ],
+        "edge_type_distribution": {
+          "feedback_resource_discovery": 3,
+          "feedback_resource_id_dependency": 3,
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/tags"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 0,
+        "resource_keys": [
+          "/wp-json/wp/v2/tags"
+        ],
+        "parameter_names": [
+          "tagId"
+        ]
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test\\RestlerResults\\experiment7480\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test\\RestlerResults\\experiment7480\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test\\RestlerResults\\experiment7480\\logs\\network.auth.25420.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test\\RestlerResults\\experiment7480\\logs\\network.gc.15572.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_0\\task_1\\Test\\RestlerResults\\experiment7480\\logs\\network.testing.25420.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "1 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "1 / 5",
+          "num_fully_valid": 1,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 33
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 1,
+          "invalid_endpoint_count": 4
+        },
+        "error_summary_count": 5,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": []
+      }
+    },
+    {
+      "task_id": "task_2",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:40:06",
+      "finished_at": "2026-06-15 15:40:12",
+      "duration_sec": 5.554,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_2",
+        "component_id": "component_1",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/comments/{commentId}",
+          "GET /wp-json/wp/v2/comments",
+          "GET /wp-json/wp/v2/comments/{commentId}",
+          "POST /wp-json/wp/v2/comments",
+          "POST /wp-json/wp/v2/comments/{commentId}"
+        ],
+        "operation_count": 5,
+        "priority": 2.5,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/comments"
+        ],
+        "edge_type_distribution": {
+          "feedback_resource_discovery": 2,
+          "feedback_resource_id_dependency": 2,
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/comments"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 0,
+        "resource_keys": [
+          "/wp-json/wp/v2/comments"
+        ],
+        "parameter_names": [
+          "commentId"
+        ]
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test\\RestlerResults\\experiment19164\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test\\RestlerResults\\experiment19164\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test\\RestlerResults\\experiment19164\\logs\\network.auth.4472.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test\\RestlerResults\\experiment19164\\logs\\network.gc.23608.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_2\\Test\\RestlerResults\\experiment19164\\logs\\network.testing.4472.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "1 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "1 / 5",
+          "num_fully_valid": 1,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 29
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 1,
+          "invalid_endpoint_count": 4
+        },
+        "error_summary_count": 5,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": []
+      }
+    },
+    {
+      "task_id": "task_3",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:40:06",
+      "finished_at": "2026-06-15 15:40:11",
+      "duration_sec": 4.658,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_3",
+        "component_id": "component_4",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/settings/{settingId}",
+          "GET /wp-json/wp/v2/settings",
+          "GET /wp-json/wp/v2/settings/{settingId}",
+          "POST /wp-json/wp/v2/settings",
+          "POST /wp-json/wp/v2/settings/{settingId}"
+        ],
+        "operation_count": 5,
+        "priority": 2.5,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/settings"
+        ],
+        "edge_type_distribution": {
+          "feedback_resource_discovery": 2,
+          "feedback_resource_id_dependency": 2,
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/settings"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 0,
+        "resource_keys": [
+          "/wp-json/wp/v2/settings"
+        ],
+        "parameter_names": [
+          "settingId"
+        ]
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test\\RestlerResults\\experiment25476\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test\\RestlerResults\\experiment25476\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test\\RestlerResults\\experiment25476\\logs\\network.auth.19484.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test\\RestlerResults\\experiment25476\\logs\\network.gc.11884.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_1\\task_3\\Test\\RestlerResults\\experiment25476\\logs\\network.testing.19484.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "2 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "2 / 5",
+          "num_fully_valid": 2,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 18
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 2,
+          "invalid_endpoint_count": 3
+        },
+        "error_summary_count": 3,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": []
+      }
+    },
+    {
+      "task_id": "task_4",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:40:12",
+      "finished_at": "2026-06-15 15:40:19",
+      "duration_sec": 7.433,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_4",
+        "component_id": "component_3",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/posts/{postId}",
+          "GET /wp-json/wp/v2/posts",
+          "GET /wp-json/wp/v2/posts/{postId}",
+          "POST /wp-json/wp/v2/posts",
+          "POST /wp-json/wp/v2/posts/{postId}"
+        ],
+        "operation_count": 5,
+        "priority": 2.25,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/posts"
+        ],
+        "edge_type_distribution": {
+          "feedback_resource_discovery": 1,
+          "feedback_resource_id_dependency": 2,
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/posts"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 1,
+        "resource_keys": [
+          "/wp-json/wp/v2/posts"
+        ],
+        "parameter_names": [
+          "postId"
+        ],
+        "numeric_value_count": 1
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test\\RestlerResults\\experiment6088\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test\\RestlerResults\\experiment6088\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test\\RestlerResults\\experiment6088\\logs\\network.auth.23696.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test\\RestlerResults\\experiment6088\\logs\\network.gc.5300.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_4\\Test\\RestlerResults\\experiment6088\\logs\\network.testing.23696.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "2 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "2 / 5",
+          "num_fully_valid": 2,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 63
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 2,
+          "invalid_endpoint_count": 3
+        },
+        "error_summary_count": 4,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": [
+          17,
+          19
+        ]
+      }
+    },
+    {
+      "task_id": "task_5",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:40:12",
+      "finished_at": "2026-06-15 15:40:18",
+      "duration_sec": 6.139,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_5",
+        "component_id": "component_0",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/categories/{categoryId}",
+          "GET /wp-json/wp/v2/categories",
+          "GET /wp-json/wp/v2/categories/{categoryId}",
+          "POST /wp-json/wp/v2/categories",
+          "POST /wp-json/wp/v2/categories/{categoryId}"
+        ],
+        "operation_count": 5,
+        "priority": 1.5,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/categories"
+        ],
+        "edge_type_distribution": {
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/categories"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 1,
+        "resource_keys": [
+          "/wp-json/wp/v2/categories"
+        ],
+        "parameter_names": [
+          "categoryId"
+        ],
+        "numeric_value_count": 1
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test\\RestlerResults\\experiment24628\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test\\RestlerResults\\experiment24628\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test\\RestlerResults\\experiment24628\\logs\\network.auth.12256.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test\\RestlerResults\\experiment24628\\logs\\network.gc.10856.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_2\\task_5\\Test\\RestlerResults\\experiment24628\\logs\\network.testing.12256.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "2 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "2 / 5",
+          "num_fully_valid": 2,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 44
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 2,
+          "invalid_endpoint_count": 3
+        },
+        "error_summary_count": 4,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "task_id": "task_6",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:40:19",
+      "finished_at": "2026-06-15 15:40:25",
+      "duration_sec": 6.12,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_6",
+        "component_id": "component_6",
+        "operation_ids": [
+          "DELETE /wp-json/wp/v2/users/{userId}",
+          "GET /wp-json/wp/v2/users",
+          "GET /wp-json/wp/v2/users/{userId}",
+          "POST /wp-json/wp/v2/users",
+          "POST /wp-json/wp/v2/users/{userId}"
+        ],
+        "operation_count": 5,
+        "priority": 1.5,
+        "parallel_safe": true,
+        "shared_state_keys": [
+          "/wp-json/wp/v2/users"
+        ],
+        "edge_type_distribution": {
+          "resource_create_consume": 3,
+          "resource_discovery_consume": 3,
+          "shared_auth_context": 10,
+          "state_conflict_order": 2
+        },
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": [
+            "/wp-json/wp/v2/users"
+          ]
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\grammar.py",
+        "requested_operation_count": 5,
+        "written_operation_count": 5,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 1,
+        "resource_keys": [
+          "/wp-json/wp/v2/users"
+        ],
+        "parameter_names": [
+          "userId"
+        ],
+        "numeric_value_count": 1
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test\\RestlerResults\\experiment11604\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test\\RestlerResults\\experiment11604\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test\\RestlerResults\\experiment11604\\logs\\network.auth.20580.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test\\RestlerResults\\experiment11604\\logs\\network.gc.23572.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_6\\Test\\RestlerResults\\experiment11604\\logs\\network.testing.20580.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "2 / 5",
+          "rendered_requests": "5 / 5",
+          "rendered_requests_valid_status": "2 / 5",
+          "num_fully_valid": 2,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 44
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 5,
+          "valid_endpoint_count": 2,
+          "invalid_endpoint_count": 3
+        },
+        "error_summary_count": 3,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "task_id": "task_7",
+      "status": "completed",
+      "returncode": 0,
+      "error": null,
+      "started_at": "2026-06-15 15:40:19",
+      "finished_at": "2026-06-15 15:40:24",
+      "duration_sec": 4.677,
+      "worker_dir": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7",
+      "command": [
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\restler\\Restler.exe",
+        "test",
+        "--grammar_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\grammar.py",
+        "--dictionary_file",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\dict.json",
+        "--no_ssl",
+        "--settings",
+        "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\engine_settings.json"
+      ],
+      "stdout_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\worker_stdout.txt",
+      "stderr_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\worker_stderr.txt",
+      "task_package": {
+        "task_id": "task_7",
+        "component_id": "component_7",
+        "operation_ids": [
+          "GET /wp-json/wp/v2/search"
+        ],
+        "operation_count": 1,
+        "priority": 0.1,
+        "parallel_safe": true,
+        "shared_state_keys": [],
+        "edge_type_distribution": {},
+        "worker_hints": {
+          "preserve_internal_restler_sequence": true,
+          "share_auth_token": true,
+          "share_resource_pool_keys": []
+        }
+      },
+      "grammar_summary": {
+        "source_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\grammar\\grammar_round3.py",
+        "output_grammar": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\grammar.py",
+        "requested_operation_count": 1,
+        "written_operation_count": 1,
+        "missing_operation_ids": []
+      },
+      "dictionary_seed_summary": {
+        "enabled": true,
+        "seeded_value_count": 0,
+        "resource_keys": [],
+        "parameter_names": []
+      },
+      "artifacts": {
+        "output_root": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test",
+        "testing_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test\\RestlerResults\\experiment24424\\logs\\testing_summary.json",
+        "speccov_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test\\RestlerResults\\experiment24424\\logs\\speccov.json",
+        "error_summary_path": "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test\\error_logs\\restler_error_summary.jsonl",
+        "bugs_path": null,
+        "network_logs": [
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test\\RestlerResults\\experiment24424\\logs\\network.auth.8720.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test\\RestlerResults\\experiment24424\\logs\\network.gc.21592.1.txt",
+          "C:\\Users\\RLJ\\Desktop\\study\\restler_bin\\.\\parallel_runs\\parallel-20260615-153959\\batch_3\\task_7\\Test\\RestlerResults\\experiment24424\\logs\\network.testing.8720.1.txt"
+        ],
+        "testing_summary": {
+          "final_spec_coverage": "1 / 1",
+          "rendered_requests": "1 / 1",
+          "rendered_requests_valid_status": "1 / 1",
+          "num_fully_valid": 1,
+          "num_sequence_failures": 0,
+          "num_invalid_by_failed_resource_creations": 0,
+          "total_object_creations": 0,
+          "total_requests_sent": {
+            "gc": 0,
+            "main_driver": 1
+          },
+          "bug_buckets": {},
+          "reproducible_bug_buckets": {},
+          "settings": {
+            "random_seed": 12345
+          }
+        },
+        "speccov_summary": {
+          "available": true,
+          "endpoint_total": 1,
+          "valid_endpoint_count": 1,
+          "invalid_endpoint_count": 0
+        },
+        "error_summary_count": 0,
+        "bug_summary": {
+          "available": false,
+          "total_bug_buckets": 0
+        },
+        "resource_ids": []
+      }
+    }
+  ],
+  "resource_pool": {
+    "schema_version": 1,
+    "resource_count": 7,
+    "resources": {
+      "/wp-json/wp/v2/categories": {
+        "ids": [
+          1
+        ],
+        "sources": [
+          "task_5"
+        ]
+      },
+      "/wp-json/wp/v2/comments": {
+        "ids": [],
+        "sources": []
+      },
+      "/wp-json/wp/v2/pages": {
+        "ids": [
+          16,
+          18
+        ],
+        "sources": [
+          "task_0"
+        ]
+      },
+      "/wp-json/wp/v2/posts": {
+        "ids": [
+          17,
+          19
+        ],
+        "sources": [
+          "task_4"
+        ]
+      },
+      "/wp-json/wp/v2/settings": {
+        "ids": [],
+        "sources": []
+      },
+      "/wp-json/wp/v2/tags": {
+        "ids": [],
+        "sources": []
+      },
+      "/wp-json/wp/v2/users": {
+        "ids": [
+          1
+        ],
+        "sources": [
+          "task_6"
+        ]
+      }
+    },
+    "note": "Shared resource pool for parallel RESTler workers.",
+    "last_updated_at": "2026-06-15 15:40:25",
+    "completed_batches": 4
+  }
+}

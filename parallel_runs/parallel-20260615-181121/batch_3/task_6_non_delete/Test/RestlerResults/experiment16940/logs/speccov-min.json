@@ -1,0 +1,177 @@
+{
+    "081ee5aa59c374abcba77e49f15d4f19374e2941_1": {
+        "verb": "GET",
+        "endpoint": "/wp-json/wp/v2/users/{userId}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "GET /wp-json/wp/v2/users/7?context=view&_embed=author%2Cwp%3Aterm HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n",
+        "response": "HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 814\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"id\":7,\"name\":\"restler_user_20260615181113\",\"url\":\"\",\"description\":\"\",\"link\":\"http:\\/\\/192.168.65.128:8088\\/author\\/restler_user_20260615181113\\/\",\"slug\":\"restler_user_20260615181113\",\"avatar_urls\":{\"24\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/89fe046fed813e8f74a0c64c1eabfee5e1f488f8eaa42cd3d8a07434d957a166?s=24&d=mm&r=g\",\"48\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/89fe046fed813e8f74a0c64c1eabfee5e1f488f8eaa42cd3d8a07434d957a166?s=48&d=mm&r=g\",\"96\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/89fe046fed813e8f74a0c64c1eabfee5e1f488f8eaa42cd3d8a07434d957a166?s=96&d=mm&r=g\"},\"meta\":[],\"_links\":{\"self\":[{\"href\":\"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/users\\/7\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/users\"}]}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_1": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 500 Internal Server Error\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 115\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"existing_user_login\",\"message\":\"\\u62b1\\u6b49\\uff0c\\u7528\\u6237\\u540d\\u5df2\\u5b58\\u5728\\uff01\",\"data\":null}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_2": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_3": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":\"restler_user\",\n    \"email\":restler_user@example.com,\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_4": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":\"restler_user\",\n    \"email\":restler_user@example.com,\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_5": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":restler_user,\n    \"email\":\"restler_user@example.com\",\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_6": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":restler_user,\n    \"email\":\"restler_user@example.com\",\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_7": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":restler_user,\n    \"email\":restler_user@example.com,\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_8": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"draft\",\n    \"username\":restler_user,\n    \"email\":restler_user@example.com,\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_9": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 500 Internal Server Error\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 115\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"existing_user_login\",\"message\":\"\\u62b1\\u6b49\\uff0c\\u7528\\u6237\\u540d\\u5df2\\u5b58\\u5728\\uff01\",\"data\":null}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_10": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_11": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":\"restler_user\",\n    \"email\":restler_user@example.com,\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:49 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_12": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":\"restler_user\",\n    \"email\":restler_user@example.com,\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_13": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":restler_user,\n    \"email\":\"restler_user@example.com\",\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_14": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":restler_user,\n    \"email\":\"restler_user@example.com\",\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_15": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":restler_user,\n    \"email\":restler_user@example.com,\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_16": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"publish\",\n    \"username\":restler_user,\n    \"email\":restler_user@example.com,\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_17": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"private\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 500 Internal Server Error\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 115\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"existing_user_login\",\"message\":\"\\u62b1\\u6b49\\uff0c\\u7528\\u6237\\u540d\\u5df2\\u5b58\\u5728\\uff01\",\"data\":null}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_18": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"private\",\n    \"username\":\"restler_user\",\n    \"email\":\"restler_user@example.com\",\n    \"password\":StrongPass123!}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "12d5d5d47f1fa86c85378e64006010bf8f6bf308_19": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\",\n    \"status\":\"private\",\n    \"username\":\"restler_user\",\n    \"email\":restler_user@example.com,\n    \"password\":\"StrongPass123!\"}\r\n",
+        "response": "HTTP/1.1 400 Bad Request\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 167\r\nConnection: close\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"code\":\"rest_invalid_json\",\"message\":\"\\u4f20\\u5165\\u7684 JSON \\u4f53\\u65e0\\u6548\\u3002\",\"data\":{\"status\":400,\"json_error_code\":4,\"json_error_message\":\"Syntax error\"}}"
+    },
+    "569adfd9ea08ca5ec42daad4d775e2f4f69c4539_1": {
+        "verb": "GET",
+        "endpoint": "/wp-json/wp/v2/users",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "GET /wp-json/wp/v2/users?context=view&search=fuzzstring&order=asc&orderby=id&_embed=author%2Cwp%3Aterm&page=1&per_page=1&offset=0&slug=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nAccept-Language: fuzzstring\r\nAUTHORIZATION TOKEN\r\n\r\n",
+        "response": "HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nX-WP-Total: 0\r\nX-WP-TotalPages: 0\r\nAllow: GET, POST\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 2\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n[]"
+    },
+    "bd5923f6a9ef6accd680d832fb0d6ce803d9a0fb_1": {
+        "verb": "POST",
+        "endpoint": "/wp-json/wp/v2/users/{userId}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "POST /wp-json/wp/v2/users/7 HTTP/1.1\r\nAccept: application/json\r\nHost: 192.168.65.128:8088\r\nContent-Type: application/json\r\nAUTHORIZATION TOKEN\r\n\r\n{\n    \"title\":\"fuzzstring\",\n    \"content\":\"fuzzstring\",\n    \"excerpt\":\"fuzzstring\"}\r\n",
+        "response": "HTTP/1.1 200 OK\r\nDate: Mon, 15 Jun 2026 10:11:50 GMT\r\nServer: Apache/2.4.66 (Debian)\r\nX-Powered-By: PHP/8.2.30\r\nX-Robots-Tag: noindex\r\nLink: <http://192.168.65.128:8088/wp-json/>; rel=\"https://api.w.org/\"\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages, Link\r\nAccess-Control-Allow-Headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type\r\nAllow: GET, POST, PUT, PATCH, DELETE\r\nExpires: Wed, 11 Jan 1984 05:00:00 GMT\r\nCache-Control: no-cache, must-revalidate, max-age=0, no-store, private\r\nContent-Length: 1192\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\"id\":7,\"username\":\"restler_user_20260615181113\",\"name\":\"restler_user_20260615181113\",\"first_name\":\"\",\"last_name\":\"\",\"email\":\"restler_user_20260615181113@example.com\",\"url\":\"\",\"description\":\"\",\"link\":\"http:\\/\\/192.168.65.128:8088\\/author\\/restler_user_20260615181113\\/\",\"locale\":\"zh_CN\",\"nickname\":\"restler_user_20260615181113\",\"slug\":\"restler_user_20260615181113\",\"roles\":[\"subscriber\"],\"registered_date\":\"2026-06-15T10:11:24+00:00\",\"capabilities\":{\"read\":true,\"level_0\":true,\"subscriber\":true},\"extra_capabilities\":{\"subscriber\":true},\"avatar_urls\":{\"24\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/89fe046fed813e8f74a0c64c1eabfee5e1f488f8eaa42cd3d8a07434d957a166?s=24&d=mm&r=g\",\"48\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/89fe046fed813e8f74a0c64c1eabfee5e1f488f8eaa42cd3d8a07434d957a166?s=48&d=mm&r=g\",\"96\":\"https:\\/\\/secure.gravatar.com\\/avatar\\/89fe046fed813e8f74a0c64c1eabfee5e1f488f8eaa42cd3d8a07434d957a166?s=96&d=mm&r=g\"},\"meta\":{\"persisted_preferences\":[]},\"_links\":{\"self\":[{\"href\":\"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/users\\/7\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"http:\\/\\/192.168.65.128:8088\\/wp-json\\/wp\\/v2\\/users\"}]}}"
+    }}
